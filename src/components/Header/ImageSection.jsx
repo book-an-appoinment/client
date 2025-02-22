@@ -3,20 +3,22 @@ import bannerImage from "../../assets/header/1.jpg";
 
 const ImageSection = () => {
   return (
-    <div className="relative mt-24 mb-32 mx-auto lg:w-[1320px]  px-4">
-      <div className="relative rounded-3xl overflow-hidden">
+    <div className="relative mt-24 mb-32 flex justify-center mx-auto lg:w-[1594px] h-[721px] px-4">
+      <div className="relative rounded-3xl overflow-hidden object-cover lg:w-[1320px] lg:h-[664px]">
         <img
           src={bannerImage}
           alt="Team collaboration"
-          width={1920}
-          height={694}
-          className="w-full h-auto object-cover"
+          className="lg:w-[1320px] lg:h-[664px] object-cover"
         />
-        <StatsCard
-          globalClients="100+"
-          teamMembers="150+"
-          businessExperience="15+"
-        />
+
+        {/* Absolute positioning for StatsCard */}
+        <div className="absolute -bottom-20 -right-30 transform -translate-x-1/2 -translate-y-1/2">
+          <StatsCard
+            globalClients="100+"
+            teamMembers="150+"
+            businessExperience="15+"
+          />
+        </div>
       </div>
     </div>
   );
