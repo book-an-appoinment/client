@@ -1,6 +1,4 @@
-import "./App.css";
-
 function App() {
-  return <div className="w-full h-[359px]">mahim</div>;
+  return <div className="">welcome</div>;
 }
 export default App;
