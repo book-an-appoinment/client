@@ -13,6 +13,7 @@
     "@fontsource/karla": "^5.1.1",
     "@fontsource/raleway": "^5.1.1",
     "@tailwindcss/vite": "^4.0.8",
+    "lightningcss": "^1.29.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
