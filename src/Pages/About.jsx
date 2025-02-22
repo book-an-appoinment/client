@@ -11,6 +11,7 @@ const About = () => {
         <BookAppointment />
         <Timeline />
         <CompanyValues />
+
       </CommonWrapper>
     </div>
   );
