@@ -75,6 +75,11 @@ const Footer = () => {
             })}
           </div>
         </div>
+
+        {/* ===newsLetter=== */}
+        <div className="w-full bg-light-green">
+          <h1>sfdsfdsf</h1>
+        </div>
       </CommonWrapper>
     </div>
   );
