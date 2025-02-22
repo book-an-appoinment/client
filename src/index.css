@@ -32,6 +32,10 @@ h6 {
   font-family: "Raleway", sans-serif;
 }
 
+img {
+  height: unset !important; /* Unsets the height property */
+}
+
 .bg-green-background {
   background: var(--color-green-background);
 }
