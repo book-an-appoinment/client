@@ -17,6 +17,11 @@
   );
 }
 
+* {
+  margin-top: 0;
+  padding: 0;
+}
+
 /* Apply the fonts globally */
 body {
   font-family: "Karla", sans-serif;
