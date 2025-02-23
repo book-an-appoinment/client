@@ -22,55 +22,59 @@ const Footer = () => {
   return (
     <div className="bg-footer-background">
       <CommonWrapper>
-        <div className="py-[100px]">
-          {/* ===footer top=== */}
-          <div className="flex">
-            <div className="w-1/2 flex flex-col gap-5">
-              <h3 className="text-white text-[32px] font-railway font-bold">
+        <div className="py-[100px] px-4 sm:px-6 md:px-8 lg:px-12">
+          {/* === Footer Top === */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Left Side */}
+            <div className="flex flex-col gap-5">
+              <h3 className="text-white text-3xl sm:text-4xl font-railway font-bold">
                 Financy
               </h3>
-              <p className="w-[430px] text-[18px] text-white opacity-50">
+              <p className="max-w-[430px] text-lg sm:text-xl text-white opacity-50">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa
-                distinctio quibusdam, reprehenderit
+                distinctio quibusdam, reprehenderit.
               </p>
             </div>
-            <div className="w-1/2 flex justify-between">
-              {footerNavData.map((item) => {
-                return (
+
+            {/* Right Side (Navigation Links) */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+              {footerNavData.map((item, index) => (
+                <div key={index}>
+                  <p className="text-lg sm:text-xl font-semibold text-white font-railway mb-3.5">
+                    {item.header}
+                  </p>
                   <div>
-                    <p className="text-xl font-semibold text-white font-railway mb-3.5">
-                      {item.header}
-                    </p>
-                    <div>
-                      {item.links.map((navItem) => {
-                        return (
-                          <Link
-                            to={navItem.url}
-                            className="text-white opacity-50 text-[18px] block font-normal"
-                          >
-                            {navItem.Label}
-                          </Link>
-                        );
-                      })}
-                    </div>
+                    {item.links.map((navItem, linkIndex) => (
+                      <Link
+                        key={linkIndex}
+                        to={navItem.url}
+                        className="text-white opacity-50 text-base sm:text-lg block font-normal"
+                      >
+                        {navItem.Label}
+                      </Link>
+                    ))}
                   </div>
-                );
-              })}
+                </div>
+              ))}
             </div>
           </div>
-          {/* ===divider=== */}
+
+          {/* === Divider === */}
           <div className="border-t border-white border-[1.5px] my-11"></div>
 
-          {/* ===icon=== */}
-          <div className="flex justify-between items-center">
-            <p className="text-[16px] text-white">
+          {/* === Copyright & Social Icons === */}
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            <p className="text-base sm:text-lg text-white text-center md:text-left">
               Copyright 2024 <span className="font-bold">Financy</span> reserved
             </p>
-            <div className="flex gap-4 py-5">
-              {icons.map((item) => {
+            <div className="flex gap-4">
+              {icons.map((item, index) => {
                 const SelectedIcon = item.icon;
                 return (
-                  <p className="border-[1.5px] border-white rounded-full flex items-center justify-center p-2">
+                  <p
+                    key={index}
+                    className="border-[1.5px] border-white rounded-full flex items-center justify-center p-2"
+                  >
                     <SelectedIcon className="text-white" />
                   </p>
                 );
@@ -78,29 +82,29 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* ===newsLetter=== */}
-          <div className="w-full bg-light-green p-[60px] rounded-[20px] flex justify-between items-center">
-            <div className="flex gap-2">
-              <p className="bg-black rounded-full flex items-center justify-center p-6">
-                <FaMessage className="text-white text-xl" />
+          {/* === Newsletter Section === */}
+          <div className="w-full bg-light-green p-8 sm:p-10 rounded-[20px] flex flex-col md:flex-row justify-between items-center gap-6 mt-10">
+            <div className="flex gap-4 items-center">
+              <p className="bg-black rounded-full flex items-center justify-center p-5">
+                <FaMessage className="text-white text-2xl" />
               </p>
               <div>
-                <h5 className="text-[28px] font-semibold text-[#004D3F]">
+                <h5 className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#004D3F]">
                   Join our newsletter now
                 </h5>
-                <p className="text-[18px] text-[#004D3FCC] opacity-80">
+                <p className="text-base sm:text-lg text-[#004D3FCC] opacity-80">
                   Be part of 500k community thriving with ZaiHR
                 </p>
               </div>
             </div>
-            <div>
-              <div className="relative w-full max-w-md">
+            <div className="w-full max-w-md">
+              <div className="relative">
                 <input
                   type="text"
                   placeholder="Enter your email"
-                  className="w-full p-3 pr-16 bg-white rounded-full focus:outline-none"
+                  className="w-full p-3 pr-16 bg-white rounded-full focus:outline-none text-sm sm:text-base"
                 />
-                <button className="absolute top-1/2 right-2 -translate-y-1/2 bg-[#004D3F] text-white px-4 py-2 rounded-full text-sm">
+                <button className="absolute top-1/2 right-2 -translate-y-1/2 bg-[#004D3F] text-white px-4 py-2 rounded-full text-xs sm:text-sm">
                   Subscribe
                 </button>
               </div>

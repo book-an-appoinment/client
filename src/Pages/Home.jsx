@@ -1,6 +1,7 @@
+import Section from "../components/Home/Form/Section";
 import Header from "../components/Home/Header/Header";
 import Recruitment from "../components/Home/Recruitment/Recruitment";
-import UpdatedArticels from "../components/Home/updatedAreticals/UpdatedArticels";
+
 
 const Home = () => {
   return (
@@ -12,7 +13,13 @@ const Home = () => {
         }
       />
       <Recruitment />
-      <UpdatedArticels/>
+
+
+      
+      <Section3/>
+      <Section/>
+
+
     </div>
   );
 };
