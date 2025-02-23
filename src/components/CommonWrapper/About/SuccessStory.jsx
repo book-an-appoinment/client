@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const BookAppointment = () => {
+const SuccessStory = () => {
     const [activeTab, setActiveTab] = useState("History");
 
     return (
@@ -46,4 +46,4 @@ const BookAppointment = () => {
     );
 };
 
-export default BookAppointment;
+export default SuccessStory;
