@@ -12,6 +12,7 @@
   "dependencies": {
     "@fontsource/karla": "^5.1.1",
     "@fontsource/raleway": "^5.1.1",
+    "@fontsource/urbanist": "^5.1.1",
     "@heroui/button": "^2.2.13",
     "@tailwindcss/vite": "^4.0.8",
     "lightningcss": "^1.29.1",
