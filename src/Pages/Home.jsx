@@ -1,5 +1,7 @@
 import Section from "../components/Home/Form/Section";
 import Header from "../components/Home/Header/Header";
+import PricingCard from "../components/Home/pricing/PricingCard";
+import SectionPricing from "../components/Home/pricing/SectionPricing";
 import Recruitment from "../components/Home/Recruitment/Recruitment";
 
 
@@ -14,10 +16,9 @@ const Home = () => {
       />
       <Recruitment />
 
-
-      
       <Section3/>
       <Section/>
+      <SectionPricing/>
 
 
     </div>
