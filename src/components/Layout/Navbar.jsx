@@ -9,7 +9,6 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-
     <nav className="bg-[#175D4E] text-white py-5 px-6">
       <div className="flex justify-between items-center w-full lg:w-[1320px] mx-auto">
         <div className="text-2xl">logo</div>
@@ -34,7 +33,6 @@ const Navbar = () => {
             to="/"
             className="hover:underline text-xl block lg:inline-block"
           >
-
             Home
           </Link>
           <Link
@@ -49,7 +47,6 @@ const Navbar = () => {
             className="hover:underline flex items-center gap-2 text-xl"
           >
             Pages <FaChevronDown />
-
           </Link>
           <Link
             to="/book-appointment"

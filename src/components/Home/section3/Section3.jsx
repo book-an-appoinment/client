@@ -4,14 +4,14 @@ import Card2 from "./components/Card2";
 function Section3() {
   return (
     <div className="border-2 border-blue-600 flex flex-wrap justify-center gap-6 p-6 py-48">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         <Card2
           title={"Broad Range ofServices Available."}
           content={
             "An extensive assortment of availableservices tailored to meet your diverse needs and preferences"
           }
           logo={"./film-tape-svgrepo-com.svg"}
-          buttonText={"View More"}
+          buttonText={"View Full Catalog"}
         />
         <Card2
           bgColor="bg-[#EDF3F2]"
@@ -57,6 +57,7 @@ function Section3() {
           }
           logo={"./film-tape-svgrepo-com.svg"}
           buttonText={"Get In Touch"}
+          isCentered={true}
         />
       </div>
     </div>
