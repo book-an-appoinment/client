@@ -23,11 +23,12 @@ const values = [
 
 const CompanyValues = () => {
     return (
-        <section className="mt-20 w-full md:px-20 bg-white">
-            <div className="w-[1480px] mx-auto flex flex-col md:flex-row justify-between items-start gap-6">
+        <section className="mt-20 w-full px-4 md:px-10 lg:px-20 bg-white">
+            {/* Header Section */}
+            <div className="max-w-[1480px] mx-auto flex flex-col md:flex-row justify-between items-start gap-6">
                 {/* Left Side Content */}
-                <div className="md:w-1/2 w-full">
-                    <button className="w-[140px] h-[50px] bg-[#A7EB94] text-green-900 font-semibold px-4 py-2 rounded-lg mb-4">
+                <div className="md:w-1/2 w-full text-center md:text-left">
+                    <button className="w-[140px] h-[50px] bg-light-green text-green-900 font-semibold px-4 py-2 rounded-lg mb-4">
                         Our Values
                     </button>
                     <h2 className="text-black text-3xl md:text-4xl font-bold">
@@ -36,7 +37,7 @@ const CompanyValues = () => {
                 </div>
 
                 {/* Right Side Content */}
-                <div className="md:w-1/2 w-full">
+                <div className="md:w-1/2 w-full text-center md:text-left">
                     <p className="text-gray-600">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.
                     </p>
@@ -44,7 +45,7 @@ const CompanyValues = () => {
             </div>
 
             {/* Values Cards Section */}
-            <div className="mt-10 w-[1480px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="mt-10 max-w-[1480px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {values.map((value, index) => (
                     <div key={index} className="bg-gray-100 p-6 rounded-lg shadow-md h-[510px]">
                         <img

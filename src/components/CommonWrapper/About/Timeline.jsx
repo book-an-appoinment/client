@@ -10,7 +10,7 @@ const Timeline = () => {
     ];
 
     return (
-        <div className="w-[1,920px] h-[1,150px] min-h-screen bg-gradient-to-br from-green-900 to-green-700 flex items-start justify-center px-6 lg:px-16">
+        <div className="w-[1,920px] h-[1,150px] min-h-screen bg-gradient-to-br from-[#004D3F] to-green-700 flex items-start justify-center px-6 lg:px-16">
             <div className=" w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
                 {/* Left Side - Heading and Button */}
                 <div className=" text-white mt-16 ml-40 flex flex-col items-start">
@@ -22,7 +22,7 @@ const Timeline = () => {
                     </h1>
 
                 </div>
-                <div className="w-[700px] h-[926px] mb-5 mt-5 ml-4 bg-green-800 bg-opacity-50 p-8 rounded shadow-lg relative">
+                <div className="w-[700px] h-[926px] mb-5 mt-5 ml-4 bg-[#004D3F] bg-opacity-50 p-8 rounded shadow-lg relative">
                     {events.map((event, index) => (
                         <div key={index} className="w-[636px] h-[164px] relative pl-10 pb-6 border-l border-green-700 last:pb-0">
                             {/* Timeline Dot with Gradient */}
