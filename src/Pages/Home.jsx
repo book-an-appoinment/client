@@ -1,5 +1,6 @@
 import Header from "../components/Home/Header/Header";
 import Recruitment from "../components/Home/Recruitment/Recruitment";
+import UpdatedArticels from "../components/Home/updatedAreticals/UpdatedArticels";
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
         }
       />
       <Recruitment />
+      <UpdatedArticels/>
     </div>
   );
 };
