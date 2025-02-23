@@ -10,45 +10,44 @@ const Timeline = () => {
     ];
 
     return (
-        <div className="w-[1,920px] h-[1,150px] min-h-screen bg-gradient-to-br from-[#004D3F] to-green-700 flex items-start justify-center px-6 lg:px-16">
-            <div className=" w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <div className="min-h-screen bg-gradient-to-br from-[#004D3F] to-green-700 flex items-center justify-center px-4 sm:px-6 lg:px-16 py-12">
+            <div className="w-full max-w-[1200px] grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
                 {/* Left Side - Heading and Button */}
-                <div className=" text-white mt-16 ml-40 flex flex-col items-start">
+                <div className="text-white text-center lg:text-left">
                     <button className="w-[140px] h-[50px] bg-[#A7EB94] text-green-900 font-semibold px-4 py-2 rounded-lg">
                         Our Story
                     </button>
-                    <h1 className="font-raleway font-semibold text-[48px] leading-[70.56px] tracking-[0%] mb-6">
-                        Share Your Journey <br /> From The Beginning To Now
+                    <h1 className="font-raleway font-semibold text-2xl sm:text-4xl leading-[1.2] mt-4">
+                        Share Your Journey <br className="hidden sm:block" /> From The Beginning To Now
                     </h1>
-
                 </div>
-                <div className="w-[700px] h-[926px] mb-5 mt-5 ml-4 bg-[#004D3F] bg-opacity-50 p-8 rounded shadow-lg relative">
+
+                {/* Timeline Section */}
+                <div className="w-full max-w-[700px] bg-[#004D3F] bg-opacity-50 p-6 sm:p-8 rounded-lg shadow-lg relative">
                     {events.map((event, index) => (
-                        <div key={index} className="w-[636px] h-[164px] relative pl-10 pb-6 border-l border-green-700 last:pb-0">
+                        <div key={index} className="relative pl-6 sm:pl-10 pb-6 border-l border-green-700 last:pb-0">
                             {/* Timeline Dot with Gradient */}
-                            <div className={`absolute left-[-12px] top-2 w-12 h-12 flex items-center justify-center rotate-45 rounded-lg shadow-lg ${index % 2 === 0 ? 'bg-gradient-to-r from-[#C2FA6B] to-[#A7EB94]' : 'bg-gradient-to-r from-[#C2FA6B] to-[#A7EB94]'}`}>
-                                <span className="w-8 h-8 bg-white rounded flex items-center justify-center">
-                                    <div className="w-3 h-3 bg-green-900 rounded-full"></div>
+                            <div className={`absolute left-[-10px] sm:left-[-12px] top-2 w-8 sm:w-12 h-8 sm:h-12 flex items-center justify-center rotate-45 rounded-lg shadow-lg ${index % 2 === 0 ? 'bg-gradient-to-r from-[#C2FA6B] to-[#A7EB94]' : 'bg-gradient-to-r from-[#C2FA6B] to-[#A7EB94]'}`}>
+                                <span className="w-5 sm:w-8 h-5 sm:h-8 bg-white rounded flex items-center justify-center">
+                                    <div className="w-2 sm:w-3 h-2 sm:h-3 bg-green-900 rounded-full"></div>
                                 </span>
                             </div>
 
-                            <div className="w-[548px] h-[134px] ml-12">
-                                <p className="text-white text-base font-bold leading-[24px] tracking-[0%] font-raleway">
+                            <div className="ml-10 sm:ml-12">
+                                <p className="text-white text-sm sm:text-base font-bold">
                                     {event.date}
                                 </p>
-
-                                <h2 className="text-white text-4xl font-semibold leading-[41.6px] tracking-[0%] font-raleway">
+                                <h2 className="text-white text-lg sm:text-2xl font-semibold">
                                     {event.title}
                                 </h2>
-                                <p className="text-white text-base leading-[24px] tracking-[0%] font-roboto">
+                                <p className="text-white text-sm sm:text-base">
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
                                 </p>
                             </div>
                         </div>
                     ))}
-
                 </div>
-
 
             </div>
         </div>

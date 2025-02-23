@@ -35,18 +35,19 @@ const Footer = () => {
               </p>
             </div>
             <div className="w-1/2 flex justify-between">
-              {footerNavData.map((item) => {
+              {footerNavData.map((item, i) => {
                 return (
-                  <div>
+                  <div key={i}>
                     <p className="text-xl font-semibold text-white font-railway mb-3.5">
                       {item.header}
                     </p>
                     <div>
-                      {item.links.map((navItem) => {
+                      {item.links.map((navItem, i) => {
                         return (
                           <Link
                             to={navItem.url}
                             className="text-white opacity-50 text-[18px] block font-normal"
+                            key={i}
                           >
                             {navItem.Label}
                           </Link>
@@ -67,10 +68,13 @@ const Footer = () => {
               Copyright 2024 <span className="font-bold">Financy</span> reserved
             </p>
             <div className="flex gap-4 py-5">
-              {icons.map((item) => {
+              {icons.map((item, i) => {
                 const SelectedIcon = item.icon;
                 return (
-                  <p className="border-[1.5px] border-white rounded-full flex items-center justify-center p-2">
+                  <p
+                    key={i}
+                    className="border-[1.5px] border-white rounded-full flex items-center justify-center p-2"
+                  >
                     <SelectedIcon className="text-white" />
                   </p>
                 );
@@ -79,9 +83,9 @@ const Footer = () => {
           </div>
 
           {/* ===newsLetter=== */}
-          <div className="w-full bg-light-green p-[60px] rounded-[20px] flex justify-between items-center">
+          <div className="w-2/8 lg:w-full bg-light-green p-[60px] rounded-[20px] lg:flex justify-between items-center">
             <div className="flex gap-2">
-              <p className="bg-black rounded-full flex items-center justify-center p-6">
+              <p className="bg-black rounded-full flex items-center justify-center lg:p-6 px-3">
                 <FaMessage className="text-white text-xl" />
               </p>
               <div>
@@ -93,7 +97,7 @@ const Footer = () => {
                 </p>
               </div>
             </div>
-            <div>
+            <div className="mt-10">
               <div className="relative w-full max-w-md">
                 <input
                   type="text"
