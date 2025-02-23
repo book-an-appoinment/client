@@ -10,7 +10,7 @@ const Timeline = () => {
     ];
 
     return (
-        <div className=" w-[1480px] h-[1,150px] min-h-screen bg-gradient-to-br from-green-900 to-green-700 flex items-center justify-center px-6 lg:px-16">
+        <div className=" w-full h-[1,150px] min-h-screen bg-gradient-to-br from-green-900 to-green-700 flex items-center justify-center px-6 lg:px-16">
             <div className="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 {/* Left Side - Heading and Button */}
                 <div className="text-white">
@@ -21,10 +21,7 @@ const Timeline = () => {
                         Share Your Journey <br /> From The Beginning To Now
                     </h1>
 
-
                 </div>
-
-                {/* Right Side - Timeline */}
                 <div className="bg-green-800 bg-opacity-50 p-8 rounded-2xl shadow-lg">
                     {events.map((event, index) => (
                         <div key={index} className="relative pl-10 pb-6 border-l border-green-400 last:pb-0">
