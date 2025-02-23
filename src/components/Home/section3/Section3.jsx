@@ -57,6 +57,7 @@ function Section3() {
           }
           logo={"./film-tape-svgrepo-com.svg"}
           buttonText={"Get In Touch"}
+          isCentered={true}
         />
       </div>
     </div>
