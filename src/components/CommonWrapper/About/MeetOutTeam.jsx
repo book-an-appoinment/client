@@ -8,7 +8,7 @@ const values = [
             "Business Strategist",
     },
     {
-        title: "HSarah Rodriguez",
+        title: "Hsarah Rodriguez",
         image: "https://dfjx2uxqg3cgi.cloudfront.net/img/photo/271393/271393_tt.jpg?20230327092741",
         description:
             "Marketing Specialist",
@@ -23,7 +23,7 @@ const values = [
 
 const MeetOurTeam = () => {
     return (
-        <section className="min-h-screen  px-6 md:px-20 bg-white">
+        <section className=" mt-20  bg-white">
             <div className="max-w-[1200px] mx-auto">
                 <div className="w-full flex justify-between items-center gap-6">
                     {/* Left Side Content */}

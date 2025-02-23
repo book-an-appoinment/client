@@ -23,7 +23,7 @@ const values = [
 
 const CompanyValues = () => {
     return (
-        <section className="min-h-screen w-full py-16 px-6 md:px-20 bg-white">
+        <section className="mt-20 w-full md:px-20 bg-white">
             <div className="w-[1480px] mx-auto flex flex-col md:flex-row justify-between items-start gap-6">
                 {/* Left Side Content */}
                 <div className="md:w-1/2 w-full">

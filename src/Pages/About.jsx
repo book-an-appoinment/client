@@ -1,4 +1,5 @@
 import CompanyValues from "../components/CommonWrapper/About/CompanyValues";
+import GuidingValues from "../components/CommonWrapper/About/GuidingValues";
 import MeetOutTeam from "../components/CommonWrapper/About/MeetOutTeam";
 import ReliableConsultant from "../components/CommonWrapper/About/ReliableConsultant";
 import StatsCards from "../components/CommonWrapper/About/StatsCards";
@@ -22,6 +23,9 @@ const About = () => {
       </CommonWrapper>
       <CommonWrapper>
         <MeetOutTeam />
+      </CommonWrapper>
+      <CommonWrapper>
+        <GuidingValues />
       </CommonWrapper>
 
 
