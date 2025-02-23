@@ -7,7 +7,7 @@ import { TbWorld } from "react-icons/tb";
 const Navbar = () => {
   return (
     <nav className="bg-[#175D4E] text-white py-5 px-6 flex gap-4 ">
-      <div className="flex justify-between items-center w-full lg:w-[1320px] mx-auto">
+      <div className="flex justify-between items-center w-full lg:max-w-[1320px] mx-auto">
         <div className="text-2xl"> logo</div>
         <div className="flex items-center gap-10">
           <Link to="/" className="hover:underline text-xl">
@@ -16,14 +16,8 @@ const Navbar = () => {
           <Link to="/about" className="hover:underline text-xl">
             Services
           </Link>
-          <Link
-            to="/contact"
-            className="hover:underline flex items-center gap-2 text-xl"
-          >
-            Pages
-            <span className="">
-              <FaChevronDown />
-            </span>
+          <Link to="/contact" className="hover:underline text-xl">
+            Contact Us
           </Link>
           <Link to="/book-appointment" className="hover:underline text-xl">
             Pricing
