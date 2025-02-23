@@ -5,7 +5,11 @@ const ReliableConsultant = () => {
     return (
         <div>
             <Header2
-                heading={"Reliable Consultants, Measurable Results"}
+                heading={
+                    <>
+                        ReliableConsultants <br /> MeasurableResults
+                    </>
+                }
                 para={
                     "Expert consulting drives corporate growth with creative strategy and solutions."
                 }
