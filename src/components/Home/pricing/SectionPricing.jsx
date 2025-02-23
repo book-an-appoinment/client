@@ -1,10 +1,16 @@
-import React from 'react'
-import PricingCard from './PricingCard'
+import React from "react";
+import PricingCard from "./PricingCard"; // Import your PricingCard component
+import ToggleButton from "./ToogleButton";
 
-function SectionPricing() {
+const PricingSection = () => {
   return (
-    <section className="flex justify-center items-center min-h-screen bg-white">
-      <div className="flex flex-row justify-center gap-6">
+    <section className="flex flex-col items-center justify-center min-h-screen bg-white py-10">
+      
+      {/* Toggle Button Centered at the Top */}
+      <ToggleButton />
+
+      {/* Pricing Cards (Centered Below the Toggle) */}
+      <div className="flex flex-row justify-center gap-6 mt-10">
         {/* First Card */}
         <PricingCard bgColor="bg-[#EFEFEFB2]" />
 
@@ -14,8 +20,9 @@ function SectionPricing() {
         {/* Last Card */}
         <PricingCard bgColor="bg-[#EFEFEFB2]" />
       </div>
-    </section>
-  )
-}
 
-export default SectionPricing
+    </section>
+  );
+};
+
+export default PricingSection;
