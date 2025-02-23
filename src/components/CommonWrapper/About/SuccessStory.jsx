@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const BookAppointment = () => {
+const SuccessStory = () => {
     const [activeTab, setActiveTab] = useState("History");
 
     return (
@@ -12,7 +12,7 @@ const BookAppointment = () => {
                     className="rounded-xl w-[655px] h-[555px] object-cover"
                 />
             </div>
-            <div className="h-[650px] md:w-1/2 p-4">
+            <div className="h-[650px] md:w-1/2 p-4 ml-4">
                 <div className="flex space-x-2 mb-4">
                     {['History', 'Mission', 'Vision'].map((tab) => (
                         <button
@@ -46,4 +46,4 @@ const BookAppointment = () => {
     );
 };
 
-export default BookAppointment;
+export default SuccessStory;
