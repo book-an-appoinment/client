@@ -15,11 +15,8 @@
     "@heroui/button": "^2.2.13",
     "@heroui/card": "^2.2.13",
     "@tailwindcss/vite": "^4.0.8",
-<<<<<<< HEAD
     "axios": "^1.7.9",
-=======
     "framer-motion": "^12.4.7",
->>>>>>> 06db6c9e0b461165fc518e5d8fa22b0cbb5270b0
     "lightningcss": "^1.29.1",
     "lucide-react": "^0.475.0",
     "react": "^19.0.0",
