@@ -1,4 +1,5 @@
-import Header from "../components/Header/Header";
+import Header from "../components/Home/Header/Header";
+import Recruitment from "../components/Home/Recruitment/Recruitment";
 
 const Home = () => {
   return (
@@ -9,6 +10,7 @@ const Home = () => {
           "Expert consulting drives corporate growth with creative strategy and solutions."
         }
       />
+      <Recruitment />
     </div>
   );
 };
