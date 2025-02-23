@@ -6,7 +6,7 @@ const StatsCard = ({ globalClients, teamMembers, businessExperience }) => {
   return (
     <div className="max-w-md mx-auto p-3 bg-green-800 text-white rounded-lg shadow-lg flex items-center">
       {/* Left side with image and text (rotated) */}
-      <div className="flex flex-col items-center mr-3 -rotate-90 bg-white text-black rounded-md p-6">
+      <div className="hidden lg:flex lg:flex-col items-center mr-3 -rotate-90 bg-white text-black rounded-md p-6">
         <div className="overflow-hidden mb-4 flex">
           <img
             src={img1} // Replace with actual image source
