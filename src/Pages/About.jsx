@@ -1,10 +1,10 @@
-import CompanyValues from "../components/CommonWrapper/About/CompanyValues";
-import GuidingValues from "../components/CommonWrapper/About/GuidingValues";
-import MeetOutTeam from "../components/CommonWrapper/About/MeetOutTeam";
-import ReliableConsultant from "../components/CommonWrapper/About/ReliableConsultant";
-import StatsCards from "../components/CommonWrapper/About/StatsCards";
-import SuccessStory from "../components/CommonWrapper/About/SuccessStory";
-import Timeline from "../components/CommonWrapper/About/Timeline";
+import CompanyValues from "../components/About/CompanyValues";
+import GuidingValues from "../components/About/GuidingValues";
+import MeetOutTeam from "../components/About/MeetOutTeam";
+import ReliableConsultant from "../components/About/ReliableConsultant";
+import StatsCards from "../components/About/StatsCards";
+import SuccessStory from "../components/About/SuccessStory";
+import Timeline from "../components/About/Timeline";
 import CommonWrapper from "../components/CommonWrapper/CommonWrapper";
 
 const About = () => {
