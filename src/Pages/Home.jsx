@@ -1,3 +1,4 @@
+import AboutUs from "../components/Home/AboutUs/AboutUs";
 import Header from "../components/Home/Header/Header";
 import Recruitment from "../components/Home/Recruitment/Recruitment";
 
@@ -11,6 +12,12 @@ const Home = () => {
         }
       />
       <Recruitment />
+
+
+
+
+
+      <AboutUs></AboutUs>
     </div>
   );
 };
