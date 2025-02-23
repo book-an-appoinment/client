@@ -11,10 +11,10 @@ const Timeline = () => {
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-[#004D3F] to-green-700 flex items-center justify-center px-4 sm:px-6 lg:px-16 py-12">
-            <div className="w-full max-w-[1200px] grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="w-full max-w-[1200px] grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
 
                 {/* Left Side - Heading and Button */}
-                <div className="text-white text-center lg:text-left">
+                <div className="flex flex-col items-start lg:self-start text-white">
                     <button className="w-[140px] h-[50px] bg-[#A7EB94] text-green-900 font-semibold px-4 py-2 rounded-lg">
                         Our Story
                     </button>
@@ -28,7 +28,7 @@ const Timeline = () => {
                     {events.map((event, index) => (
                         <div key={index} className="relative pl-6 sm:pl-10 pb-6 border-l border-green-700 last:pb-0">
                             {/* Timeline Dot with Gradient */}
-                            <div className={`absolute left-[-10px] sm:left-[-12px] top-2 w-8 sm:w-12 h-8 sm:h-12 flex items-center justify-center rotate-45 rounded-lg shadow-lg ${index % 2 === 0 ? 'bg-gradient-to-r from-[#C2FA6B] to-[#A7EB94]' : 'bg-gradient-to-r from-[#C2FA6B] to-[#A7EB94]'}`}>
+                            <div className="w-[636px] h-[164px] absolute left-[-10px] sm:left-[-12px] top-2  sm:w-12 sm:h-12 flex items-center justify-center rotate-45 rounded-lg shadow-lg bg-gradient-to-r from-[#C2FA6B] to-[#A7EB94]">
                                 <span className="w-5 sm:w-8 h-5 sm:h-8 bg-white rounded flex items-center justify-center">
                                     <div className="w-2 sm:w-3 h-2 sm:h-3 bg-green-900 rounded-full"></div>
                                 </span>

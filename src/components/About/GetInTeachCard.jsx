@@ -1,4 +1,4 @@
-import CommonWrapper from "../../CommonWrapper/CommonWrapper";
+import CommonWrapper from "../CommonWrapper/CommonWrapper";
 
 const GetInTeachCard = () => {
     return (

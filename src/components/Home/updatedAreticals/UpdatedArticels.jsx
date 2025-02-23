@@ -7,7 +7,7 @@ const UpdatedArticles = () => {
 
     const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 1024);
 
-    
+
     useEffect(() => {
         const handleResize = () => {
             setIsLargeScreen(window.innerWidth >= 1024);
@@ -15,7 +15,7 @@ const UpdatedArticles = () => {
 
         window.addEventListener('resize', handleResize);
 
-        
+
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
@@ -51,7 +51,7 @@ const UpdatedArticles = () => {
                         date="June 4, 2024"
                         title="The Consulting Playbook: Tactics for Success"
                         description="Bring to the tables win-win survival strategies to ensure proactive domination."
-                        imgage="https://via.placeholder.com/515x351"
+                        imgage="https://img.freepik.com/premium-photo/reading-documents-portfolio-business-people-meeting-planning-financial-strategy-revenue-sales-growth-vision-teamwork-senior-company-employees-working-finance-report-paperwork_590464-169190.jpg?w=360"
                     />
                 </div>
 
@@ -61,14 +61,14 @@ const UpdatedArticles = () => {
                         date="June 4, 2024"
                         title="Bring to the tables win-win survival strategies to ensure proactive domination."
                         description="Bring to the tables win-win survival strategies to ensure proactive domination."
-                        imgage="https://via.placeholder.com/179x274"
+                        imgage="https://vmfservice.com/wp-content/uploads/2024/03/VMF-Service-01-1024x856.webp"
                     />
                     <ArticalCards
                         layout="horizontal"
                         date="June 4, 2024"
                         title="Expert Perspectives: Consulting With Growth"
                         description="Offering a compass for those seeking to navigate their own ventures with skill and acumen."
-                        imgage="https://via.placeholder.com/179x274"
+                        imgage="https://img.freepik.com/free-photo/boss-talking-about-company-financial-perspectives_1163-5350.jpg"
                     />
                 </div>
             </div>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { IoIosArrowForward } from "react-icons/io";
 import { IoIosArrowBack } from "react-icons/io";
+import { RiDoubleQuotesL } from "react-icons/ri";
 
 const testimonials = [
   {
@@ -70,12 +71,13 @@ const Review = () => {
               >
                 <div className="relative w-full text-center sm:text-left ">
                   <div
-                    className="absolute hidden lg:flex lg:-top-26 left-1/2 lg:left-10 
+                    className=" w-[111px] h-[111px]  absolute hidden lg:flex lg:-top-26 left-1/2 lg:left-10 
                                 transform -translate-x-1/2 lg:translate-x-0 
-                                 bg-[#A7EB94] text-[#004D3F] w-[80px] lg:w-[100px] h-[80px] lg:h-[100px] 
+                                 bg-[#A7EB94] text-[#004D3F]  lg:w-[100px]  lg:h-[100px] 
                                 rounded-full text-lg items-center justify-center"
                   >
-                    ❝
+                    <RiDoubleQuotesL className="w-[57px] h-[40px]" />
+
                   </div>
 
                   <p className="text-[#F4F4F4] italic font-railway text-base sm:text-lg">
@@ -113,9 +115,8 @@ const Review = () => {
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full ${
-                  currentIndex === index ? "bg-green-500" : "bg-gray-400"
-                }`}
+                className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full ${currentIndex === index ? "bg-green-500" : "bg-gray-400"
+                  }`}
               />
             ))}
           </div>
