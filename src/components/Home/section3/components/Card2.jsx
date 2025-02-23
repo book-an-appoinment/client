@@ -26,8 +26,8 @@ function Card2({ bgColor, content, title, logo , buttonText , isCentered }) {
         </div>
 
         {/* Button (Fix: Ensure it stays at the bottom) */}
-        <div className={`flex flex-row   ${isCentered?"justify-center":" "} py-4 text-left font-raleway text-[15.44px] font-semibold items-center`}>
-          <button className="w-[100px] h-[23.15px]">{buttonText}</button>
+        <div className={`flex flex-row   ${isCentered?"justify-center":" "}  py-4 text-left font-raleway text-[15.44px] font-semibold items-center`}>
+          <button className="w-[90px] h-[23.15px] text-left ">{buttonText}</button>
           { buttonText !== "Get In Touch"? <GoArrowRight/> :null}
         </div>
       </div>
