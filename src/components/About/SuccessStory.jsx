@@ -6,7 +6,7 @@ const SuccessStory = () => {
     const [activeTab, setActiveTab] = useState("History");
 
     return (
-        <div className="w-full max-w-[1480px] flex flex-col md:flex-row bg-gray-100 p-6 rounded-xl shadow-lg mx-auto mt-10">
+        <div className=" max-w-[1480px] flex flex-col md:flex-row bg-gray-100 p-6 rounded-xl shadow-lg mx-auto mt-10">
             {/* Image Section (Hidden on Mobile) */}
             <div className="hidden md:block w-[50%]">
                 <img
@@ -17,14 +17,14 @@ const SuccessStory = () => {
             </div>
 
             {/* Content Section */}
-            <div className="flex flex-col h-auto md:h-[650px] w-full md:w-1/2 p-4 md:ml-4">
+            <div className=" flex flex-col h-auto md:h-[650px] w-full md:w-1/2 p-4 md:ml-4">
                 {/* Tabs */}
                 <div className="flex space-x-2 mb-4 justify-center md:justify-start">
                     {['History', 'Mission', 'Vision'].map((tab) => (
                         <button
                             key={tab}
                             onClick={() => setActiveTab(tab)}
-                            className={`px-4 py-2 w-full md:w-[148px] h-[51px] text-black rounded-lg border ${activeTab === tab ? 'bg-green-500 text-white' : 'bg-white text-black'
+                            className={`px-4 py-2 w-full md:w-[148px] h-[51px] text-[#014E3F] rounded-lg border ${activeTab === tab ? 'bg-light-green text-[#014E3F]' : 'bg-white text-black'
                                 }`}
                         >
                             {tab}
@@ -46,7 +46,7 @@ const SuccessStory = () => {
 
                 {/* Button (Responsive Placement) */}
                 <Link to='/book-appointment' >
-                    <button className="bg-green-500 text-white px-6 py-3 rounded-[5px] font-semibold hover:bg-green-600 transition w-full md:w-[667px] h-[68px] mx-auto md:mx-0">
+                    <button className="bg-light-green text-[#014E3F] px-6 py-3 rounded-[5px] font-semibold hover:bg-green-500 hover:text-white transition w-full md:w-[667px] h-[68px] mx-auto md:mx-0">
                         Book an Appointment
                     </button>
                 </Link>
