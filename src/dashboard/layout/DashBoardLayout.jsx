@@ -13,24 +13,19 @@ const DashBoardLayout = () => {
   const [selectedAppointment, setSelectedAppointment] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
-  const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     fetchAppointments();
-  }, [page]);
+  }, []);
 
   const fetchAppointments = async () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        `https://server-hpxb.onrender.com/api/v1/appointments/all-appointments?page=${page}`
+        `https://server-hpxb.onrender.com/api/v1/appointments/all-appointments`
       );
-      if (page === 1) {
-        setAppointments(response.data.data);
-      } else {
-        setAppointments((prev) => [...prev, ...response.data.data]);
-      }
+      setAppointments(response.data.data);
       setFilteredAppointments(response.data.data);
     } catch (error) {
       console.error("Error fetching appointments:", error);
@@ -38,8 +33,6 @@ const DashBoardLayout = () => {
       setLoading(false);
     }
   };
-
-  console.log(appointments);
 
   useEffect(() => {
     const results = appointments.filter(
@@ -77,12 +70,7 @@ const DashBoardLayout = () => {
   };
 
   const handleRefresh = () => {
-    setPage(1);
     fetchAppointments();
-  };
-
-  const handleLoadMore = () => {
-    setPage((prev) => prev + 1);
   };
 
   return (
@@ -189,14 +177,6 @@ const DashBoardLayout = () => {
             </tbody>
           </table>
           {loading && <div className="text-center py-4">Loading...</div>}
-          <div className="flex justify-center py-4">
-            <button
-              onClick={handleLoadMore}
-              className="bg-gradient-to-r from-[#A7EB94] to-[#8DD879] text-white px-6 py-2 rounded-lg hover:from-[#8DD879] hover:to-[#A7EB94] transition-all"
-            >
-              Load More
-            </button>
-          </div>
         </div>
       </div>
 
