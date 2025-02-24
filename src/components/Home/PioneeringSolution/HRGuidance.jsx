@@ -1,5 +1,6 @@
-import { Building2Icon, MessageCircleIcon } from "lucide-react";
-import { FaRegCircle } from "react-icons/fa"; // Importing icons
+import img1 from "../../../assets/person.png";
+import { LuMessageCircleHeart } from "react-icons/lu";
+import { LuChartNoAxesCombined } from "react-icons/lu";
 
 const HRGuidanceSection = () => {
   return (
@@ -22,23 +23,27 @@ const HRGuidanceSection = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="flex flex-col items-start gap-3">
-            <MessageCircleIcon className="text-white text-4xl mt-1" size={40} />
+            <div className="w-12 h-12 border border-gray-300 rounded-full flex items-center justify-center">
+              <LuMessageCircleHeart className="text-2xl" />
+            </div>
             <div>
               <h4 className="text-white text-[20px] font-semibold">
                 Feedback Loop
               </h4>
-              <p className="text-gray-400 text-sm">
+              <p className="text-gray-400 text-sm w-1/2">
                 Embracing a dynamic approach to continuous improvement.
               </p>
             </div>
           </div>
           <div className="flex flex-col items-start gap-3">
-            <Building2Icon className="text-white text-4xl mt-1" size={40} />
+            <div className="w-12 h-12 border border-gray-300 rounded-full flex items-center justify-center">
+              <LuChartNoAxesCombined className="text-2xl" />
+            </div>
             <div>
               <h4 className="text-white text-[20px] font-semibold">
                 Bespoke Analysis
               </h4>
-              <p className="text-gray-400 text-sm">
+              <p className="text-gray-400 text-sm w-1/2">
                 Customized insights tailored to your unique challenges.
               </p>
             </div>
@@ -50,9 +55,9 @@ const HRGuidanceSection = () => {
       <div className="relative flex-1 w-full border-[#87CEFF33] border-[38px] rounded-[20px]">
         <div className="relative rounded-xl overflow-hidden border-4 border-white shadow-lg w-full">
           <img
-            src="../../../assets/person.png"
+            src={img1}
             alt="HR Consultation"
-            className="w-full object-cover rounded-2xl h-[400px]"
+            className="w-full object-cover rounded-2xl"
           />
         </div>
         {/* Layered Effect */}

@@ -1,4 +1,5 @@
 import ImageSection from "./ImageSection";
+import PropTypes from "prop-types";
 
 const Header = ({
   heading,
@@ -32,6 +33,14 @@ const Header = ({
       {showImageSection && <ImageSection showStatsCard={showStatsCard} />}
     </div>
   );
+};
+
+Header.propTypes = {
+  heading: PropTypes.string.isRequired,
+  para: PropTypes.string.isRequired,
+  buttonTitle: PropTypes.string.isRequired,
+  showImageSection: PropTypes.bool,
+  showStatsCard: PropTypes.bool,
 };
 
 export default Header;

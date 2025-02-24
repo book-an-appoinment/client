@@ -1,13 +1,6 @@
-import React from "react";
 import CommonWrapper from "../../CommonWrapper/CommonWrapper";
 
 const GetProfessional = () => {
-  const events = [
-    { title: "Identyfy Requirements " },
-    { title: "Discuss Information" },
-    { title: "Receive Application" },
-  ];
-
   return (
     <div className="mt-20 min-h-screen bg-gradient-to-br from-[#004D3F] to-green-700 px-4 sm:px-6 lg:px-16 py-12">
       <CommonWrapper>
