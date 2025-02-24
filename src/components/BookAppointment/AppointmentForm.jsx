@@ -1,17 +1,15 @@
 import React, { useState } from "react";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
 import InputField from "./InputField";
 import { useForm } from "react-hook-form";
 import SelectField from "./SelectField";
 import TimePicker from "./TimePicker";
 import TextAreaField from "./TextAreaField";
 import axios from "axios";
-import { Button } from "@heroui/button";
-import toast from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 
 const AppointmentForm = () => {
   const { register, handleSubmit, reset } = useForm();
+  const [isLoading, setIsLoading] = useState(false);
 
   const onSubmit = async (data) => {
     const dateObj = new Date(data.date);
@@ -27,9 +25,9 @@ const AppointmentForm = () => {
       date: formattedDate,
     };
 
-    console.log(payload);
+    setIsLoading(true);
     const loadId = toast.loading("Creating........", {
-      position: "bottom-right",
+      position: "top-right",
     });
     try {
       const response = await axios.post(
@@ -44,10 +42,11 @@ const AppointmentForm = () => {
       toast.error("Something went wrong", { position: "top-right" });
     } finally {
       toast.dismiss(loadId);
+      setIsLoading(false);
     }
   };
   return (
-    <div className=" w-full max-w-[1479px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 -mt-[220px] my-12">
+    <div className="w-full max-w-[1479px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 -mt-[220px] my-12">
       {/* Form Section */}
       <div className="w-full border border-[#EDF3F2] shadow-[-1.35px_18.89px_180.83px_0px_#0A303D1A] bg-white rounded-lg p-6 sm:p-8 md:p-10 lg:p-14 xl:p-16">
         <form
@@ -121,6 +120,7 @@ const AppointmentForm = () => {
           <div className="col-span-1 md:col-span-2">
             <button
               type="submit"
+              disabled={isLoading}
               className="w-full bg-[#A7EB94] text-white py-3 rounded-md hover:bg-green-600 transition-all cursor-pointer"
             >
               Send Message
@@ -128,6 +128,7 @@ const AppointmentForm = () => {
           </div>
         </form>
       </div>
+      <Toaster />
     </div>
   );
 };
