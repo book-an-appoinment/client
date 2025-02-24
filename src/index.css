@@ -9,6 +9,7 @@ h4,
 h5,
 h6 {
   margin: revert; /* Restores browser default margin */
+
 }
 
 @theme {
@@ -19,12 +20,10 @@ h6 {
 }
 
 :root {
-  --color-green-background: radial-gradient(
-    55.97% 157.65% at 50.89% 48.56%,
-    #004d3f 0%,
-    #004d3f 53.5%,
-    #26714b 100%
-  );
+  --color-green-background: radial-gradient(55.97% 157.65% at 50.89% 48.56%,
+      #004d3f 0%,
+      #004d3f 53.5%,
+      #26714b 100%);
 }
 
 /* Apply the fonts globally */

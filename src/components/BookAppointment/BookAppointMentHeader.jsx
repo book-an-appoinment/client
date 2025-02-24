@@ -3,14 +3,14 @@ import CommonWrapper from "../CommonWrapper/CommonWrapper";
 const BookAppointMentHeader = () => {
   return (
     <div
-      className="w-full h-[805px] px-4 sm:px-6 md:px-8 lg:px-12"
+      className="w-full h-[400px] lg:h-[805px] px-4 sm:px-6 md:px-8 lg:px-12"
       style={{
         background:
           "radial-gradient(55.97% 157.65% at 50.89% 48.56%, #004D3F 0%, #004D3F 53.5%, #26714B 100%)",
       }}
     >
       <CommonWrapper>
-        <div className="text-center space-y-4 pt-[200px]">
+        <div className="text-center lg:space-y-4 pt-[50px] lg:pt-[160px]">
           <h1 className="text-white font-semibold text-3xl sm:text-4xl md:text-5xl leading-tight 2xl:text-[60px]">
             Book an Appointment
           </h1>

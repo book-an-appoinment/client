@@ -1,17 +1,22 @@
 import React from "react";
 import Button from "./Buttons";
 
+
 const ArticalCards = ({
+
   layout = "vertical",
   date,
   title,
   description,
+
   imgage,
+
 }) => {
   const isHorizontal = layout === "horizontal";
 
   return (
     <div
+
       className={`${
         isHorizontal ? "w-full  p-[24px]" : "w-full lg:h-[800px] pt-[34px] "
       } ${isHorizontal ? "flex-row" : "flex-col"} bg-white  rounded-3xl flex`}
@@ -37,6 +42,7 @@ const ArticalCards = ({
           }`}
         >
           <h6>{date}</h6>
+
           <Button
             border={false}
             w="w-[131px]"
@@ -44,6 +50,7 @@ const ArticalCards = ({
             c="bg-[#004D3F26]"
           />
         </div>
+
 
         <h4
           className={`${
@@ -60,6 +67,7 @@ const ArticalCards = ({
               : "font-karla font-normal text-[16px] leading-[29.63px] tracking-[0%]  "
           } mt-[21px]`}
         >
+
           {description}
         </p>
       </div>
@@ -67,4 +75,6 @@ const ArticalCards = ({
   );
 };
 
+
 export default ArticalCards;
+
