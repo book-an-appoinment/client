@@ -1,6 +1,12 @@
 import ImageSection from "./ImageSection";
 
-const Header = ({ heading, para, buttonTitle, showImageSection = true, showStatsCard = true }) => {
+const Header = ({
+  heading,
+  para,
+  buttonTitle,
+  showImageSection = true,
+  showStatsCard = true,
+}) => {
   return (
     <div
       className="w-full mx-auto lg:h-[694px]"

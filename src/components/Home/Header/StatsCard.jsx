@@ -4,10 +4,10 @@ import img3 from "../../../assets/header/client/3.jpg";
 
 const StatsCard = ({ globalClients, teamMembers, businessExperience }) => {
   return (
-    <div className="max-w-md mx-auto p-3 bg-green-800 text-white rounded-lg shadow-lg flex items-center">
+    <div className="  bg-[#014e3f] text-white rounded-4xl shadow-lg flex items-center p-2">
       {/* Left side with image and text (rotated) */}
-      <div className="hidden lg:flex lg:flex-col items-center mr-3 -rotate-90 bg-white text-black rounded-md p-6">
-        <div className="overflow-hidden mb-4 flex">
+      <div className="flex justify-center items-center gap-3 p-2 mr-3 -rotate-90 bg-white text-black rounded-3xl">
+        <div className="flex">
           <img
             src={img1} // Replace with actual image source
             alt="Profile"
@@ -24,14 +24,14 @@ const StatsCard = ({ globalClients, teamMembers, businessExperience }) => {
             className="object-cover w-14 h-14 rounded-[50%] border-4 border-white" // No margin on the last image
           />
         </div>
-        <div className="flex flex-col">
-          <h2 className="text-3xl font-semibold">200+</h2>
-          <h3 className="">Satisfied Customers</h3>
+        <div className="flex flex-col ">
+          <h2 className="text-2xl font-bold">200+</h2>
+          <h3 className="text-sm font-semibold">Satisfied Customers</h3>
         </div>
       </div>
 
       {/* Right side with statistics */}
-      <div className="py-4">
+      <div className="py-4 grow">
         <div className="mb-5">
           <h2 className="text-light-green text-3xl">{globalClients} </h2>
           <h3 className="text-xl font-bold">Global Clients</h3>
