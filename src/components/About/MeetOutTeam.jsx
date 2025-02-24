@@ -1,21 +1,23 @@
-import { Button } from "@heroui/button";
+import meet1 from "../../assets/meet1.png";
+import meet2 from "../../assets/meet2.png";
+import meet3 from "../../assets/meet3.png";
 
 const values = [
     {
         title: "Emily Thompson",
-        image: "https://cqas.ie/wp-content/uploads/2024/01/Hero-2-Business-Consultant.webp",
+        image: meet1,
         description:
             "Business Strategist",
     },
     {
         title: "Hsarah Rodriguez",
-        image: "https://dfjx2uxqg3cgi.cloudfront.net/img/photo/271393/271393_tt.jpg?20230327092741",
+        image: meet2,
         description:
             "Marketing Specialist",
     },
     {
         title: "Jessica Patel",
-        image: "https://us-ab.org/wp-content/uploads/2021/05/team-2.jpg",
+        image: meet3,
         description:
             "HR Advice",
     },

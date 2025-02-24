@@ -1,21 +1,23 @@
-import { Button } from "@heroui/button";
+import aboutcard1 from "../../assets/aboutcard2.png";
+import aboutcard2 from "../../assets/aboutcard2.png";
+import aboutcard3 from "../../assets/aboutcard3.png";
 
 const values = [
     {
         title: "Highlight Value One",
-        image: "https://educational.tools/wp-content/uploads/2024/07/2149136892.jpg",
+        image: aboutcard1,
         description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros",
     },
     {
         title: "Highlight Value Two",
-        image: "https://percipioworkforcesolutions.com/wp-content/uploads/2022/10/percipio-workforce-solutions-about-us.jpg",
+        image: aboutcard2,
         description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros ",
     },
     {
         title: "Highlight Value Three",
-        image: "https://assets.telegraphindia.com/telegraph/2023/Nov/1699430188_4.jpg",
+        image: aboutcard3,
         description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros",
     },
