@@ -26,11 +26,11 @@ const Home = () => {
       </CommonWrapper>
       <GetProfessional />
       <Section3 />
-      <PioneeringSolution></PioneeringSolution>
+      <PioneeringSolution />
       <Review />
+      <SectionPricing />
       <UpdatedArticles />
       <Section />
-      <SectionPricing />
     </div>
   );
 };
