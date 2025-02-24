@@ -1,27 +1,50 @@
-
-
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { FaTrash } from 'react-icons/fa'; // Import delete icon
+import { FaTrash, FaSync, FaSearch } from 'react-icons/fa'; // Import icons
+import { ToastContainer, toast } from 'react-toastify'; // Import toast notifications
+import 'react-toastify/dist/ReactToastify.css'; // Import toast styles
 
 const DashBoardLayout = () => {
   const [appointments, setAppointments] = useState([]);
+  const [filteredAppointments, setFilteredAppointments] = useState([]);
   const [selectedAppointment, setSelectedAppointment] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [page, setPage] = useState(1);
+  const [loading, setLoading] = useState(false);
 
   // Fetch appointments from the API
   useEffect(() => {
     fetchAppointments();
-  }, []);
+  }, [page]);
 
   const fetchAppointments = async () => {
+    setLoading(true);
     try {
-      const response = await axios.get('https://server-hpxb.onrender.com/api/v1/appointments/all-appointments');
-      setAppointments(response.data.data);
+      const response = await axios.get(`https://server-hpxb.onrender.com/api/v1/appointments/all-appointments?page=${page}`);
+      if (page === 1) {
+        setAppointments(response.data.data);
+      } else {
+        setAppointments((prev) => [...prev, ...response.data.data]);
+      }
+      setFilteredAppointments(response.data.data);
     } catch (error) {
       console.error('Error fetching appointments:', error);
+    } finally {
+      setLoading(false);
     }
   };
+
+  // Handle search
+  useEffect(() => {
+    const results = appointments.filter(
+      (appointment) =>
+        appointment.fullname?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        appointment.email?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        appointment.service?.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    setFilteredAppointments(results);
+  }, [searchTerm, appointments]);
 
   // Open modal with appointment details
   const openModal = (appointment) => {
@@ -40,9 +63,22 @@ const DashBoardLayout = () => {
     try {
       await axios.delete(`https://server-hpxb.onrender.com/api/v1/appointments/${id}`);
       fetchAppointments(); // Refresh the list after deletion
+      toast.success('Appointment deleted successfully!');
     } catch (error) {
       console.error('Error deleting appointment:', error);
+      toast.error('Failed to delete appointment.');
     }
+  };
+
+  // Handle refresh
+  const handleRefresh = () => {
+    setPage(1);
+    fetchAppointments();
+  };
+
+  // Handle load more
+  const handleLoadMore = () => {
+    setPage((prev) => prev + 1);
   };
 
   return (
@@ -60,6 +96,24 @@ const DashBoardLayout = () => {
       {/* Main Content */}
       <div className="flex-1 p-8">
         <h1 className="text-3xl font-bold text-gray-800 mb-8">Appointments</h1>
+        <div className="flex justify-between items-center mb-6">
+          <div className="relative">
+            <input
+              type="text"
+              placeholder="Search appointments..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="pl-10 pr-4 py-2 rounded-lg border border-white/30 bg-white/20 backdrop-blur-lg focus:outline-none focus:border-[#A7EB94]"
+            />
+            <FaSearch className="absolute left-3 top-3 text-gray-500" />
+          </div>
+          <button
+            onClick={handleRefresh}
+            className="bg-gradient-to-r from-[#A7EB94] to-[#8DD879] text-white px-4 py-2 rounded-lg hover:from-[#8DD879] hover:to-[#A7EB94] transition-all flex items-center"
+          >
+            <FaSync className="mr-2" /> Refresh
+          </button>
+        </div>
         <div className="bg-white/30 backdrop-blur-lg rounded-lg shadow-lg overflow-hidden border border-white/30">
           <table className="min-w-full">
             <thead className="bg-white/50">
@@ -73,7 +127,7 @@ const DashBoardLayout = () => {
               </tr>
             </thead>
             <tbody className="divide-y divide-white/20">
-              {appointments.map((appointment) => (
+              {filteredAppointments.map((appointment) => (
                 <tr
                   key={appointment._id}
                   className="hover:bg-white/20 cursor-pointer transition-all"
@@ -99,6 +153,15 @@ const DashBoardLayout = () => {
               ))}
             </tbody>
           </table>
+          {loading && <div className="text-center py-4">Loading...</div>}
+          <div className="flex justify-center py-4">
+            <button
+              onClick={handleLoadMore}
+              className="bg-gradient-to-r from-[#A7EB94] to-[#8DD879] text-white px-6 py-2 rounded-lg hover:from-[#8DD879] hover:to-[#A7EB94] transition-all"
+            >
+              Load More
+            </button>
+          </div>
         </div>
       </div>
 
@@ -135,6 +198,9 @@ const DashBoardLayout = () => {
           </div>
         </div>
       )}
+
+      {/* Toast Notifications */}
+      <ToastContainer position="bottom-right" autoClose={3000} />
     </div>
   );
 };
