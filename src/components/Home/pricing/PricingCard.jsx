@@ -1,5 +1,7 @@
+
 /* eslint-disable react/prop-types */
 import React from "react";
+
 import "@fontsource/raleway";
 import "@fontsource/urbanist";
 import { MdOutlineTaskAlt } from "react-icons/md";
@@ -7,6 +9,7 @@ import { MdOutlineTaskAlt } from "react-icons/md";
 const PricingCard = ({ bgColor, price, planType }) => {
   return (
     <div
+
       className={`w-[420px] h-[557px] ${bgColor} rounded-3xl flex flex-col p-6 shadow-lg absolute-top relative`}
     >
       {/* Toggle Button Placeholder */}
@@ -20,10 +23,13 @@ const PricingCard = ({ bgColor, price, planType }) => {
       {/* Per Month/Year Section */}
       <p className="text-lg text-[#004D3F] font-urbanist">{planType}</p>
 
+
       {/* Price Section */}
       <div className="flex items-center gap-2">
         <p className="font-raleway text-[47.39px] font-bold text-[#004D3F]">
+
           ${price}
+
         </p>
         <span className="bg-[#004D3F] text-[#A7EB94] text-xs font-urbanist px-2 py-1 rounded-md">
           Save 20%

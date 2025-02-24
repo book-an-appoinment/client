@@ -9,9 +9,9 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-[#175D4E] text-white py-5 px-6">
+    <nav className="bg-[#175D4E] text-white py-4 px-6">
       <div className="flex justify-between items-center w-full lg:w-[1320px] mx-auto">
-        <div className="text-2xl">logo</div>
+        <div className="text-xl">logo</div>
 
         {/* Mobile Menu Button */}
         <button
@@ -31,26 +31,26 @@ const Navbar = () => {
         >
           <Link
             to="/"
-            className="hover:underline text-xl block lg:inline-block"
+            className="hover:underline text-lg block lg:inline-block"
           >
             Home
           </Link>
           <Link
             to="/about"
-            className="hover:underline text-xl block lg:inline-block"
+            className="hover:underline text-lg block lg:inline-block"
           >
             Services
           </Link>
 
           <Link
             to="/contact"
-            className="hover:underline flex items-center gap-2 text-xl"
+            className="hover:underline flex items-center gap-2 text-lg"
           >
-            Pages <FaChevronDown />
+            Pages <FaChevronDown className="text-sm" />
           </Link>
           <Link
             to="/book-appointment"
-            className="hover:underline text-xl block lg:inline-block"
+            className="hover:underline text-lg block lg:inline-block"
           >
             Pricing
           </Link>
@@ -59,14 +59,14 @@ const Navbar = () => {
         {/* Right Section */}
         <div className="flex items-center gap-4">
           <div className="w-12 h-12 rounded-full border border-gray-500 flex justify-center items-center">
-            <RiSearchLine className="text-2xl" />
+            <RiSearchLine className="text-xl" />
           </div>
           <div className="w-12 h-12 rounded-full bg-light-green flex justify-center items-center text-black">
-            <GoPerson className="text-2xl" />
+            <GoPerson className="text-xl" />
           </div>
           <div className="flex items-center justify-center gap-2 bg-[#337063] p-3 rounded-xl">
-            <TbWorld className="text-3xl" />
-            <h1 className="text-2xl">EN</h1>
+            <TbWorld className="text-2xl" />
+            <h1 className="text-xl">EN</h1>
           </div>
         </div>
       </div>

@@ -10,7 +10,6 @@ import Section3 from "../components/Home/section3/Section3";
 import UpdatedArticles from "../components/Home/updatedAreticals/UpdatedArticels";
 import Review from "../components/shared/Review";
 
-
 const Home = () => {
   return (
     <div>
@@ -19,9 +18,7 @@ const Home = () => {
         para={
           "Expert consulting drives corporate growth with creative strategy and solutions."
         }
-        buttonTitle={
-          "Explore More"
-        }
+        buttonTitle={"Explore More"}
       />
       <CommonWrapper>
         <OnboardPlaning />
