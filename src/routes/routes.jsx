@@ -5,6 +5,7 @@ import About from "../Pages/About";
 import Contact from "../Pages/Contact";
 import BookAnAppointment from "../Pages/BookAnAppointment";
 import NotFound from "../Pages/NotFound";
+import DashBoardLayout from "../dashboard/layout/DashBoardLayout";
 
 const routes = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const routes = createBrowserRouter([
       },
     ],
   },
+  {
+    path:"/admin/dashboard",
+    element:<DashBoardLayout/>
+  }
 ]);
 
 export default routes;
