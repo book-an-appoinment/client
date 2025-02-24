@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import CommonWrapper from "../components/CommonWrapper/CommonWrapper";
 import Header from "../components/Home/Header/Header";
 import "../assets/css/contactus.css";
-import { motion, useInView, useAnimation } from "framer-motion";
+import {  useInView, useAnimation } from "framer-motion";
 import { IoCall } from "react-icons/io5";
 import { FaLocationDot } from "react-icons/fa6";
 import { IoMdMail } from "react-icons/io";
@@ -15,6 +15,8 @@ const offices = [
     address: "Berlin, DE",
     phone: "+49 123 456",
     email: "germany@financebox.com",
+    lat: 52.52,  // Add latitude
+    lng: 13.405, // Add longitude
   },
   {
     name: "UK Office",
@@ -23,6 +25,8 @@ const offices = [
     address: "London, UK",
     phone: "+44 123 456",
     email: "uk@financebox.com",
+    lat: 51.5074,
+    lng: -0.1278,
   },
   {
     name: "USA Office",
@@ -31,6 +35,8 @@ const offices = [
     address: "New York, USA",
     phone: "+1 101 875 6553",
     email: "info@financebox.com",
+    lat: 40.7128,
+    lng: -74.0060,
   },
   {
     name: "Saudi Arabia's Office",
@@ -39,6 +45,8 @@ const offices = [
     address: "Riyadh, SA",
     phone: "+966 123 456",
     email: "saudi@financebox.com",
+    lat: 24.7136,
+    lng: 46.6753,
   },
   {
     name: "AUS Office",
@@ -47,6 +55,8 @@ const offices = [
     address: "Sydney, AUS",
     phone: "+61 123 456",
     email: "aus@financebox.com",
+    lat: -33.8688,
+    lng: 151.2093,
   },
   {
     name: "South Africa Office",
@@ -55,6 +65,8 @@ const offices = [
     address: "Cape Town, ZA",
     phone: "+27 123 456",
     email: "southafrica@financebox.com",
+    lat: -33.9249,
+    lng: 18.4241,
   },
 ];
 
@@ -139,7 +151,7 @@ const Contact = () => {
               <div className="md:col-span-2 mt-8">
                 <button
                   type="submit"
-                  className="w-full bg-[#A7EB94] text-[#004D3F] text-2xl font- py-3 rounded-md"
+                  className="w-full bg-[#A7EB94] text-[#004D3F] text-2xl font- py-3 rounded-md cursor-pointer hover:bg-[#7fc26c]"
                 >
                   Send Message
                 </button>
@@ -172,14 +184,16 @@ const Contact = () => {
                     {activeOffice.name}
                   </h3>
                   <p className="flex items-center gap-2 text-white mb-1">
-                  <FaLocationDot className="text-[#A7EB94]"/>
+                    <FaLocationDot className="text-[#A7EB94]" />
                     <span className="opacity-60">{activeOffice.address}</span>
                   </p>
                   <p className="flex items-center gap-2 text-white mb-1">
-                  <IoCall className="text-[#A7EB94]"/> <span className="opacity-60">{activeOffice.phone}</span>
+                    <IoCall className="text-[#A7EB94]" />{" "}
+                    <span className="opacity-60">{activeOffice.phone}</span>
                   </p>
                   <p className="flex items-center gap-2 text-white mb-1">
-                  <IoMdMail className="text-[#A7EB94]"/> <span className="opacity-60">{activeOffice.email}</span>
+                    <IoMdMail className="text-[#A7EB94]" />{" "}
+                    <span className="opacity-60">{activeOffice.email}</span>
                   </p>
                 </div>
               ) : (
@@ -196,39 +210,38 @@ const Contact = () => {
         <h2 className="text-4xl font-semibold text-center text-[#0C121D] mt-32">
           Find Us On Google Map
         </h2>
-        <div ref={ref} className="mb-24">
+        <div ref={ref} className="mb-24 ">
           <div className="mapouter relative text-right w-full h-[400px] mt-12">
             <div className="gmap_canvas">
               <iframe
                 title="Google Map"
-                className="gmap_iframe w-full h-full"
-                src="https://maps.google.com/maps?width=600&height=400&hl=en&q=37.7749,-122.4194&t=&z=15&ie=UTF8&iwloc=B&output=embed"
+                className="gmap_iframe w-full h-[739px]"
+                src={`https://maps.google.com/maps?width=600&height=400&hl=en&q=${activeOffice.lat},${activeOffice.lng}&t=&z=15&ie=UTF8&iwloc=B&output=embed`}
               ></iframe>
-
-              <a href="https://connectionsgame.org/">Connections Game</a>
             </div>
             <style>
               {`
-          .mapouter {
-            position: relative;
-            width: 100%;
-            height: 400px;
-          }
-          .gmap_canvas {
-            overflow: hidden;
-            background: none !important;
-            width: 100%;
-            height: 400px;
-          }
-          .gmap_iframe {
-            width: 100% !important;
-            height: 400px !important;
-          }
-        `}
+                .mapouter {
+                  position: relative;
+                  width: 100%;
+                  height: 400px;
+                }
+                .gmap_canvas {
+                  overflow: hidden;
+                  background: none !important;
+                  width: 100%;
+                  height: 400px;
+                }
+                .gmap_iframe {
+                  width: 100% !important;
+                  height: 400px !important;
+                }
+              `}
             </style>
           </div>
         </div>
       </CommonWrapper>
+
     </div>
   );
 };
