@@ -53,18 +53,14 @@ const TabNavigation = () => {
     <div>
       <div className="flex justify-center mt-5">
         {" "}
-
         <div className="flex bg-white rounded-lg shadow-md p-3 2xl:w-[800px]">
-
           {tabs.map((tab) => (
             <button
               key={tab.id}
               className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 flex-1
             ${
               activeTab === tab.id
-
                 ? "bg-[#A7EB94] text-black"
-
                 : "text-gray-600 hover:bg-gray-100"
             }`}
               onClick={() => setActiveTab(tab.id)}
