@@ -58,7 +58,7 @@ const TabNavigation = () => {
           {tabs.map((tab) => (
             <button
               key={tab.id}
-              className={`flex items-center text-[#004D3F] gap-2 px-[18px] py-[15px] rounded-lg text-sm font-medium transition-all duration-300 flex-1
+              className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 flex-1
             ${
               activeTab === tab.id
                 ? "bg-[#A7EB94] text-white"
