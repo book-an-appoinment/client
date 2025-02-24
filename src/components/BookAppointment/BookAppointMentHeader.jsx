@@ -14,11 +14,13 @@ const BookAppointMentHeader = () => {
           <h1 className="text-white font-semibold text-3xl sm:text-4xl md:text-5xl leading-tight 2xl:text-[60px]">
             Book an Appointment
           </h1>
-          <p className="text-white text-base sm:text-lg md:text-xl max-w-[850px] mx-auto">
-            Their contributions and exceptional skills illuminate the path to
-            success, guiding our efforts toward innovation and proficiency
-            within our intelligence operations.
-          </p>
+          <div className="flex justify-center">
+            <p className="text-white text-base sm:text-lg md:text-xl max-w-[850px] mx-auto">
+              Their contributions and exceptional skills illuminate the path to
+              success, guiding our efforts toward innovation and proficiency
+              within our intelligence operations.
+            </p>
+          </div>
         </div>
       </CommonWrapper>
     </div>
