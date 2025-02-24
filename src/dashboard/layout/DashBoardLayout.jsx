@@ -16,7 +16,7 @@ const DashBoardLayout = () => {
 
   const fetchAppointments = async () => {
     try {
-      const response = await axios.get('https://appoinment-server-h773.onrender.com/api/appointments');
+      const response = await axios.get('https://server-hpxb.onrender.com/api/v1/appointments/all-appointments');
       setAppointments(response.data.data);
     } catch (error) {
       console.error('Error fetching appointments:', error);
@@ -38,7 +38,7 @@ const DashBoardLayout = () => {
   // Delete an appointment
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/appointments/${id}`);
+      await axios.delete(`https://server-hpxb.onrender.com/api/v1/appointments/${id}`);
       fetchAppointments(); // Refresh the list after deletion
     } catch (error) {
       console.error('Error deleting appointment:', error);
