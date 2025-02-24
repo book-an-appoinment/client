@@ -6,7 +6,7 @@ const StatsCard = ({ globalClients, teamMembers, businessExperience }) => {
   return (
     <div className="  bg-[#014e3f] text-white rounded-4xl shadow-lg flex items-center p-2">
       {/* Left side with image and text (rotated) */}
-      <div className="flex justify-center items-center gap-3 p-2 mr-3 -rotate-90 bg-white text-black rounded-3xl">
+      <div className="w-1/2 flex justify-center items-center gap-3 p-2 mr-3 -rotate-90 bg-white text-black rounded-3xl">
         <div className="flex">
           <img
             src={img1} // Replace with actual image source

@@ -55,12 +55,12 @@ const GetProfessional = () => {
             <div className="bg-emerald-800 p-8 rounded-lg max-w-xl">
               <div className="relative">
                 {/* Vertical line */}
-                <div className="absolute left-5 top-5 h-[calc(100%-10rem)] w-[2px] border-l-2 border-dashed border-white !last:border-none" />
+                <div className="absolute left-5 top-5 h-[calc(100%-8rem)] w-[2px] border-l-2 border-dashed border-white !last:border-none" />
 
                 {/* Timeline items */}
                 <div className="">
                   <div className="flex gap-6">
-                    <div className="z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white text-emerald-800 font-semibold">
+                    <div className="z-10 flex h-12 w-12 mt-3 items-center justify-center rounded-full bg-white text-emerald-800 font-semibold">
                       01
                     </div>
                     <div className="">
@@ -75,7 +75,7 @@ const GetProfessional = () => {
                   </div>
 
                   <div className="flex gap-6">
-                    <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white text-emerald-800 font-semibold">
+                    <div className="relative z-10 flex h-12 w-12 mt-5 items-center justify-center rounded-full bg-white text-emerald-800 font-semibold">
                       02
                     </div>
                     <div className="pt-2">
@@ -90,7 +90,7 @@ const GetProfessional = () => {
                   </div>
 
                   <div className="flex gap-6">
-                    <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-emerald-200 text-emerald-800 font-semibold">
+                    <div className="relative z-10 flex h-12 w-12 mt-5 items-center justify-center rounded-full bg-emerald-200 text-emerald-800 font-semibold">
                       03
                     </div>
                     <div className="pt-2">
