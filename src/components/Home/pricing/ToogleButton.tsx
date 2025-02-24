@@ -13,7 +13,7 @@ const ToggleButton = ({ onToggle }) => {
     <div className="relative flex flex-col items-center">
       {/* Toggle Button Container */}
       <div
-        className="w-[260px] h-[75px] bg-[#004D3F] flex items-center p-3 rounded-full cursor-pointer relative shadow-lg"
+        className="w-[260px] h-[75px] bg-[#004D3F] flex items-center p-3 rounded-full cursor-pointer relative shadow-lg border-8 border-white"
         onClick={handleToggle}
       >
         {/* Toggle Indicator */}
@@ -33,7 +33,7 @@ const ToggleButton = ({ onToggle }) => {
       </div>
 
       {/* Speech Tail (White Triangle) */}
-      <div className="w-0 h-0 border-l-[20px] border-l-transparent border-r-[20px] border-r-transparent border-t-[20px] border-t-white relative top-[-5px]"></div>
+      {/* <div className="w-0 h-0 border-l-[20px] border-l-transparent border-r-[20px] border-r-transparent border-t-[20px] border-t-white relative top-[-5px]"></div> */}
      
     </div>
   );
