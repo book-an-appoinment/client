@@ -11,7 +11,7 @@ const Navbar = () => {
   return (
     <nav className="bg-[#175D4E] text-white py-4 px-6">
       <div className="flex justify-between items-center w-full lg:w-[1320px] mx-auto">
-        <div className="text-xl">logo</div>
+        <div className="text-xl">Financy</div>
 
         {/* Mobile Menu Button */}
         <button
@@ -34,6 +34,12 @@ const Navbar = () => {
             className="hover:underline text-lg block lg:inline-block"
           >
             Home
+          </Link>
+          <Link
+            to="/about"
+            className="hover:underline text-lg block lg:inline-block"
+          >
+            About Us
           </Link>
           <Link
             to="/about"

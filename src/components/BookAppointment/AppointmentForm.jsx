@@ -51,7 +51,7 @@ const AppointmentForm = () => {
     }
   };
   return (
-    <div className="w-full max-w-[1479px] mx-auto px-4 sm:px-6 md:px-8 lg:px-[75px] -mt-[380px] my-12">
+    <div className="w-full max-w-[1479px] mx-auto px-4 sm:px-6 md:px-8 lg:px-[75px] -mt-[150px] lg:-mt-[380px] my-12">
       {/* Form Section */}
       <div className="w-full border border-[#EDF3F2] shadow-[-1.35px_18.89px_180.83px_0px_#0A303D1A] bg-white rounded-lg p-6 sm:p-8 md:p-10 lg:p-14 xl:p-16">
         <form
@@ -146,7 +146,7 @@ const AppointmentForm = () => {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full bg-[#A7EB94] h-[80px] text-[#004D3F] text-[26px] py-3 rounded-md hover:bg-green-600 hover:text-white transition-all cursor-pointer"
+              className="w-full bg-[#A7EB94] lg:h-[80px] text-[#004D3F] lg:text-[26px] py-3 rounded-md hover:bg-green-600 hover:text-white transition-all cursor-pointer"
             >
               Send Message
             </button>

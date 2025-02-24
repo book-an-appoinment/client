@@ -52,13 +52,12 @@ const HRGuidanceSection = () => {
       </div>
 
       {/* Right Image Section */}
-      <div className="relative flex-1 w-full border-[#87CEFF33] border-[38px] rounded-[20px]">
-
-        <div className="relative rounded-xl overflow-hidden border-4 border-white shadow-lg w-full">
+      <div className="relative flex-1 w-full rounded-[20px] bg-[#3f8080] p-12">
+        <div className="relative rounded-2xl overflow-hidden bg-white p-3 shadow-[20px] w-full">
           <img
             src={img1}
             alt="HR Consultation"
-            className="w-full object-cover rounded-2xl"
+            className="w-full object-cover rounded-[20px]"
           />
         </div>
 

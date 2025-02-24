@@ -7,10 +7,9 @@ h2,
 h3,
 h4,
 h5,
-h6,
-p {
-  margin: revert;
-  /* Restores browser default margin */
+h6 {
+  margin: revert; /* Restores browser default margin */
+
 }
 
 @theme {

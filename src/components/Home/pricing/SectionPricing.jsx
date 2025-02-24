@@ -1,4 +1,4 @@
-import  { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import ToggleButton from "./ToogleButton";
 import PricingCard from "./PricingCard";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
@@ -20,17 +20,23 @@ const PricingSection = () => {
 
   const pricingData = [
     { bgColor: "bg-gray-200", price: 100, planType: "Per month" },
-    { bgColor: "bg-[#A7EB94]", price: isMonthly ? 150 : 1350, planType: isMonthly ? "Per month" : "Per year" },
+    {
+      bgColor: "bg-[#A7EB94]",
+      price: isMonthly ? 150 : 1350,
+      planType: isMonthly ? "Per month" : "Per year",
+    },
     { bgColor: "bg-gray-200", price: 200, planType: "Per month" },
   ];
 
- 
-
-
   return (
-    <div className="flex justify-center items-center mb-10">
+    <div className="flex justify-center items-center mb-10 mt-5 lg:mt-36">
       {/* Pricing Cards Container */}
-      <div className={`flex gap-6 relative ${isMobile ? "flex-col items-center" : "flex-row"}`}>
+      {/* <div
+        className={`flex gap-6 relative ${
+          isMobile ? "flex-col items-center" : "flex-row"
+        }`}
+      > */}
+      <div className={`flex gap-6 relative flex-col lg:flex-row`}>
         {/* Left Pricing Card (Gray) */}
         <PricingCard bgColor="bg-gray-200" price={100} planType="Per month" />
 
