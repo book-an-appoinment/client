@@ -5,6 +5,8 @@ import About from "../Pages/About";
 import Contact from "../Pages/Contact";
 import BookAnAppointment from "../Pages/BookAnAppointment";
 import NotFound from "../Pages/NotFound";
+import Team from "../Pages/Team";
+import DashBoardLayout from "../dashboard/layout/DashBoardLayout";
 
 const routes = createBrowserRouter([
   {
