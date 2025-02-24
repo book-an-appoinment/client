@@ -1,10 +1,11 @@
+import CommonWrapper from "../components/CommonWrapper/CommonWrapper";
+import AboutUs from "../components/Home/AboutUs/AboutUs";
 import Section from "../components/Home/Form/Section";
 import GetProfessional from "../components/Home/GetProfessional/GetProfessional";
 import OnboardPlaning from "../components/Home/GetProfessional/OnboardPlaning";
 import Header from "../components/Home/Header/Header";
-import PricingCard from "../components/Home/pricing/PricingCard";
+import PioneeringSolution from "../components/Home/PioneeringSolution/PioneeringSolution";
 import SectionPricing from "../components/Home/pricing/SectionPricing";
-import Recruitment from "../components/Home/Recruitment/Recruitment";
 import Section3 from "../components/Home/section3/Section3";
 import UpdatedArticles from "../components/Home/updatedAreticals/UpdatedArticels";
 import Review from "../components/shared/Review";
@@ -22,7 +23,17 @@ const Home = () => {
           "Explore More"
         }
       />
-      <Recruitment />
+      <CommonWrapper>
+        <OnboardPlaning />
+        <AboutUs />
+      </CommonWrapper>
+      <GetProfessional />
+      <Section3 />
+      <PioneeringSolution></PioneeringSolution>
+      <Review />
+      <UpdatedArticles />
+      <Section />
+      <SectionPricing />
     </div>
   );
 };

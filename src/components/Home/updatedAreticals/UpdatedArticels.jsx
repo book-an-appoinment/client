@@ -21,7 +21,7 @@ const UpdatedArticles = () => {
 
     return (
         <CommonWrapper>
-            <div className=' flex justify-between items-center'>
+            <div className='mt-20 flex justify-between items-center'>
                 <div className="">
                     <div className=''>
                         <Button h="h-[40px]" w="w-[116px]" c='bg-transparent' border={true} />
