@@ -6,7 +6,7 @@ import { TiStarburst } from "react-icons/ti";
 
 const StatsCards = () => {
     return (
-        <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 p-6 sm:-mt-0 -mt-150">
+        <div className=" w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 p-6 sm:-mt-0 -mt-150">
             <div className="w-full h-[287px] flex flex-col items-center justify-center bg-gray-100 p-6 rounded-xl shadow-md text-center">
                 <div className="w-20 h-20 rounded-full bg-green-300 flex items-center justify-center relative">
                     <HiMiniUserGroup className="w-9 h-9 absolute top-[22px] left-[22px]" />

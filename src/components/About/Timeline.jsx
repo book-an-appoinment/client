@@ -28,11 +28,14 @@ const Timeline = () => {
                     {events.map((event, index) => (
                         <div key={index} className="relative pl-6 sm:pl-10 pb-6 border-l border-green-700 last:pb-0">
                             {/* Timeline Dot with Gradient */}
-                            <div className="w-[636px] h-[164px] absolute left-[-10px] sm:left-[-12px] top-2  sm:w-12 sm:h-12 flex items-center justify-center rotate-45 rounded-lg shadow-lg bg-gradient-to-r from-[#C2FA6B] to-[#A7EB94]">
-                                <span className="w-5 sm:w-8 h-5 sm:h-8 bg-white rounded flex items-center justify-center">
-                                    <div className="w-2 sm:w-3 h-2 sm:h-3 bg-green-900 rounded-full"></div>
+                            <div className="w-[48px] h-[48px] absolute left-[-10px] sm:left-[-12px] top-2 flex items-center justify-center rotate-45 rounded-lg shadow-lg bg-gradient-to-r from-[#C2FA6B] to-[#A7EB94]">
+                                <span className="w-5 sm:w-8 xs:w-6 h-5 sm:h-8 xs:h-6 bg-white rounded flex items-center justify-center">
+                                    <div className="w-2 sm:w-3 xs:w-2 h-2 sm:h-3 xs:h-2 bg-green-900 rounded-full"></div>
                                 </span>
                             </div>
+
+
+
 
                             <div className="ml-10 sm:ml-12">
                                 <p className="text-white text-sm sm:text-base font-bold">
