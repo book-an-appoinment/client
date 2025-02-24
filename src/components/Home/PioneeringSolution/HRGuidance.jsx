@@ -53,6 +53,7 @@ const HRGuidanceSection = () => {
 
       {/* Right Image Section */}
       <div className="relative flex-1 w-full border-[#87CEFF33] border-[38px] rounded-[20px]">
+
         <div className="relative rounded-xl overflow-hidden border-4 border-white shadow-lg w-full">
           <img
             src={img1}
@@ -60,6 +61,7 @@ const HRGuidanceSection = () => {
             className="w-full object-cover rounded-2xl"
           />
         </div>
+
         {/* Layered Effect */}
         <div className="absolute top-3 left-3 w-full h-full rounded-2xl border-2 border-green-400 opacity-50 -z-10"></div>
       </div>

@@ -6,6 +6,7 @@ import StatsCards from "../components/About/StatsCards";
 import SuccessStory from "../components/About/SuccessStory";
 import Timeline from "../components/About/Timeline";
 import CommonWrapper from "../components/CommonWrapper/CommonWrapper";
+import Review from "../components/shared/Review";
 
 const About = () => {
   return (
@@ -21,6 +22,7 @@ const About = () => {
       <CommonWrapper>
         <CompanyValues />
       </CommonWrapper>
+      <Review />
       <CommonWrapper>
         <MeetOutTeam />
       </CommonWrapper>

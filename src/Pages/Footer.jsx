@@ -31,8 +31,8 @@ const Footer = () => {
                 Financy
               </h3>
               <p className="max-w-[430px] text-lg sm:text-xl text-white opacity-50">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa
-                distinctio quibusdam, reprehenderit.
+                The management of revenue the conduct or transaction of the
+                money matter generally, specially those affecting the public
               </p>
             </div>
 
