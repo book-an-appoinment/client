@@ -7,7 +7,9 @@ const BookAnAppointment = () => {
     <div>
       <BookAppointMentHeader />
       <CommonWrapper>
-        <AppointmentForm />
+        <div className="2xl:h-[1300px]">
+          <AppointmentForm />
+        </div>
       </CommonWrapper>
     </div>
   );

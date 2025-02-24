@@ -23,8 +23,8 @@ const values = [
 
 const MeetOurTeam = () => {
     return (
-        <section className=" mt-20  bg-white">
-            <div className="max-w-[1200px] mx-auto">
+        <section className="mt-20  bg-white">
+            <div className="mx-auto">
                 <div className="w-full flex justify-between items-center gap-6">
                     {/* Left Side Content */}
                     <div className="md:w-1/2 w-full">

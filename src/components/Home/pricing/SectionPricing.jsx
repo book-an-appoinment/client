@@ -1,27 +1,63 @@
-import React from "react";
-import PricingCard from "./PricingCard"; // Import your PricingCard component
+import { useEffect, useState } from "react";
 import ToggleButton from "./ToogleButton";
+import PricingCard from "./PricingCard";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const PricingSection = () => {
+  const [isMonthly, setIsMonthly] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Detect screen width to toggle mobile mode
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 768); // Mobile when width < 768px
+    };
+
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
+
+  const pricingData = [
+    { bgColor: "bg-gray-200", price: 100, planType: "Per month" },
+    {
+      bgColor: "bg-[#A7EB94]",
+      price: isMonthly ? 150 : 1350,
+      planType: isMonthly ? "Per month" : "Per year",
+    },
+    { bgColor: "bg-gray-200", price: 200, planType: "Per month" },
+  ];
+
   return (
-    <section className="flex flex-col items-center justify-center min-h-screen bg-white py-10">
+    <div className="flex justify-center items-center mb-10 mt-5 lg:mt-36">
+      {/* Pricing Cards Container */}
+      {/* <div
+        className={`flex gap-6 relative ${
+          isMobile ? "flex-col items-center" : "flex-row"
+        }`}
+      > */}
+      <div className={`flex gap-6 relative flex-col lg:flex-row`}>
+        {/* Left Pricing Card (Gray) */}
+        <PricingCard bgColor="bg-gray-200" price={100} planType="Per month" />
 
-      {/* Toggle Button Centered at the Top */}
-      <ToggleButton />
+        {/* Middle Pricing Card with Toggle Button */}
+        <div className="relative">
+          {/* Toggle Button Positioned Above the Middle Card */}
+          <div className="absolute top-[-40px] left-1/2 transform -translate-x-1/2 z-10 hidden sm:block">
+            <ToggleButton onToggle={setIsMonthly} />
+          </div>
+          {/* Middle Card (Green: #A7EB94) */}
+          <PricingCard
+            bgColor="bg-[#A7EB94]"
+            price={isMonthly ? 150 : 1350}
+            planType={isMonthly ? "Per month" : "Per year"}
+          />
+        </div>
 
-      {/* Pricing Cards (Centered Below the Toggle) */}
-      <div className="flex flex-row justify-center gap-6 mt-10">
-        {/* First Card */}
-        <PricingCard bgColor="bg-[#EFEFEFB2]" />
-
-        {/* Middle Card */}
-        <PricingCard bgColor="bg-[#A7EB94]" />
-
-        {/* Last Card */}
-        <PricingCard bgColor="bg-[#EFEFEFB2]" />
+        {/* Right Pricing Card (Gray) */}
+        <PricingCard bgColor="bg-gray-200" price={200} planType="Per month" />
       </div>
-
-    </section>
+    </div>
   );
 };
 

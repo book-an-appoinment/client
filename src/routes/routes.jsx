@@ -5,7 +5,6 @@ import About from "../Pages/About";
 import Contact from "../Pages/Contact";
 import BookAnAppointment from "../Pages/BookAnAppointment";
 import NotFound from "../Pages/NotFound";
-import DashBoardLayout from "../dashboard/layout/DashBoardLayout";
 
 const routes = createBrowserRouter([
   {
@@ -27,6 +26,10 @@ const routes = createBrowserRouter([
       {
         path: "book-appointment",
         element: <BookAnAppointment />,
+      },
+      {
+        path: "team",
+        element: <Team />,
       },
       {
         path: "*",

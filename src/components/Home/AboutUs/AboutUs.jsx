@@ -1,13 +1,16 @@
 import React from "react";
 import { IoBagHandle } from "react-icons/io5";
+import { IoIosPeople } from "react-icons/io";
+import { TbTargetArrow } from "react-icons/tb";
+import { FaTools } from "react-icons/fa";
 
 const AboutUs = () => {
     return (
         <div className="grid grid-cols-4 gap-8">
-            <div className="col-span-1 bg-[#004D3F0D] p-2 rounded-xl">
+            <div className="col-span-1 bg-[#004D3F0D] p-2 rounded-xl pl-5">
                 <h1 className="text-right text-9xl font-bold bg-gradient-to-t from-[#fafafac2] to-[#004D3FC2] bg-clip-text text-transparent">01</h1>
                 <div className="inline-block bg-[#A7EB94] rounded-full p-3">
-                    <IoBagHandle className="text-4xl" />
+                    <IoBagHandle className="text-5xl" />
                 </div>
                 <h2 className="text-2xl font-semibold my-3">Corporate Programs</h2>
                 <p className="text-md text-[#56595C]">
@@ -31,24 +34,24 @@ const AboutUs = () => {
                     </button>
                 </div>
             </div>
-            <div className="col-span-1 bg-[#004D3F0D] p-2 rounded-xl">
+            <div className="col-span-1 bg-[#004D3F0D] p-2 rounded-xl pl-5">
                 <h1 className="text-right text-9xl font-bold bg-gradient-to-t from-[#fafafac2] to-[#004D3FC2] bg-clip-text text-transparent">03</h1>
                 <div className="inline-block bg-[#A7EB94] rounded-full p-3">
-                    <IoBagHandle className="text-4xl" />
+                    <IoIosPeople className="text-5xl" />
                 </div>
                 <h2 className="text-2xl font-semibold my-3">Recruitment Solutions</h2>
                 <p className="text-md text-[#56595C]">
                     Finding the perfect fit for every role. With ZaiHR, experience recruitment solutions.
                 </p>
             </div>
-            <div className="col-span-1 bg-[#A7EB94] p-2 rounded-xl">
+            <div className="col-span-1 bg-[#A7EB94] p-2 rounded-xl pl-5">
                 <h1 className="text-right text-9xl font-bold bg-gradient-to-t from-[#fafafac2] to-[#004D3FC2] bg-clip-text text-transparent">02</h1>
-                <div className="inline-block bg-[#A7EB94] rounded-full p-3">
-                    <IoBagHandle className="text-4xl" />
+                <div className="inline-block bg-white rounded-full p-3">
+                    <TbTargetArrow className="text-5xl" />
                 </div>
                 <h2 className="text-2xl font-semibold my-3">Leadership Training</h2>
                 <p className="text-md text-[#56595C]">
-                    Empowering Tomorrow's Leaders Today. With ZaiHR, delve into training modules.
+                    Empowering Tomorrow&apos;s Leaders Today. With ZaiHR, delve into training modules.
                 </p>
             </div>
             <div className="col-span-2">
@@ -58,10 +61,10 @@ const AboutUs = () => {
                     className="rounded-3xl w-full h-[340px] object-cover"
                 />
             </div>
-            <div className="col-span-1 bg-[#004D3F0D] p-2 rounded-xl">
+            <div className="col-span-1 bg-[#004D3F0D] p-2 rounded-xl pl-5">
                 <h1 className="text-right text-9xl font-bold bg-gradient-to-t from-[#fafafac2] to-[#004D3FC2] bg-clip-text text-transparent">04</h1>
                 <div className="inline-block bg-[#A7EB94] rounded-full p-3">
-                    <IoBagHandle className="text-4xl" />
+                    <FaTools className="text-5xl" />
                 </div>
                 <h2 className="text-2xl font-semibold my-3">Improving Resource</h2>
                 <p className="text-md text-[#56595C]">
