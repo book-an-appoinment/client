@@ -1,20 +1,18 @@
-import GetInTeachCard from "./GetInTeachCard";
 import Header2 from "./ReuseComponent/Header2";
 
 const ReliableConsultant = () => {
     return (
-        <div>
+        <div className="mb-[50px] md:mb-[80px] lg:mb-[490px] xl:mb-[450px]">
             <Header2
                 heading={
                     <>
-                        ReliableConsultants <br /> MeasurableResults
+                        Reliable Consultants <br /> Measurable Results
                     </>
                 }
                 para={
                     "Expert consulting drives corporate growth with creative strategy and solutions."
                 }
             />
-            <GetInTeachCard />
         </div>
     );
 };

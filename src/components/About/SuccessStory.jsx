@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const SuccessStory = () => {
     const [activeTab, setActiveTab] = useState("History");
@@ -43,9 +45,12 @@ const SuccessStory = () => {
                 </p>
 
                 {/* Button (Responsive Placement) */}
-                <button className="bg-green-500 text-white px-6 py-3 rounded-[5px] font-semibold hover:bg-green-600 transition w-full md:w-[667px] h-[68px] mx-auto md:mx-0">
-                    Book an Appointment
-                </button>
+                <Link to='/book-appointment' >
+                    <button className="bg-green-500 text-white px-6 py-3 rounded-[5px] font-semibold hover:bg-green-600 transition w-full md:w-[667px] h-[68px] mx-auto md:mx-0">
+                        Book an Appointment
+                    </button>
+                </Link>
+
             </div>
         </div>
     );
