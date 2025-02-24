@@ -1,40 +1,48 @@
 import React from "react";
 import Button from "./Buttons";
 
-const ArticleCards = ({
+
+const ArticalCards = ({
+
   layout = "vertical",
   date,
   title,
   description,
-  image,
+
+  imgage,
+
 }) => {
   const isHorizontal = layout === "horizontal";
 
   return (
     <div
-      className={`bg-white rounded-3xl flex ${
-        isHorizontal
-          ? "w-full h-[325px] p-[24px] flex-row items-center"
-          : "w-full h-[687px] pt-[34px] flex-col items-center"
-      }`}
+
+      className={`${
+        isHorizontal ? "w-full  p-[24px]" : "w-full lg:h-[800px] pt-[34px] "
+      } ${isHorizontal ? "flex-row" : "flex-col"} bg-white  rounded-3xl flex`}
     >
       <img
-        className={`rounded-[21px] bg-gray-600 object-cover ${
-          isHorizontal
-            ? "w-[279px] h-[274px] mr-[20px]"
-            : "w-[515px] h-[351px] mb-[20px]"
-        }`}
-        src={image}
-        alt="article"
+        className={`${
+          isHorizontal ? "w-[279px] " : "w-[515px]"
+        } rounded-[21px] bg-gray-600 mx-auto object-cover`}
+        src={imgage}
+        alt="add img"
       />
 
       <div
-        className={`flex flex-col justify-between text-left ${
-          isHorizontal ? "w-[300px]" : "w-[515px]"
-        }`}
+        className={`${
+          isHorizontal
+            ? "flex flex-col justify-between ml-[12px] w-full"
+            : "flex flex-col justify-between mt-[44px] w-[90%]"
+        } mx-auto`}
       >
-        <div className="flex justify-between items-center w-full mb-[10px]">
-          <h6 className="text-gray-600 font-medium">{date}</h6>
+        <div
+          className={` flex justify-between items-center ${
+            isHorizontal ? "  mt-[22px]" : ""
+          }`}
+        >
+          <h6>{date}</h6>
+
           <Button
             border={false}
             w="w-[131px]"
@@ -43,11 +51,23 @@ const ArticleCards = ({
           />
         </div>
 
-        <h4 className="font-raleway font-semibold text-[22px] leading-[36px] tracking-[0%] mb-[10px]">
+
+        <h4
+          className={`${
+            isHorizontal ? " " : ""
+          } font-raleway font-semibold text-[22px] leading-[36px] tracking-[0%] mt-[21px] `}
+        >
           {title}
         </h4>
 
-        <p className="font-karla font-normal text-[16px] leading-[29.63px] tracking-[0%] text-gray-700">
+        <p
+          className={`${
+            isHorizontal
+              ? ""
+              : "font-karla font-normal text-[16px] leading-[29.63px] tracking-[0%]  "
+          } mt-[21px]`}
+        >
+
           {description}
         </p>
       </div>
@@ -55,4 +75,6 @@ const ArticleCards = ({
   );
 };
 
-export default ArticleCards;
+
+export default ArticalCards;
+
