@@ -9,7 +9,7 @@ const GetProfessional = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-[#004D3F] to-green-700 px-4 sm:px-6 lg:px-16 py-12">
+        <div className="mt-20 min-h-screen bg-gradient-to-br from-[#004D3F] to-green-700 px-4 sm:px-6 lg:px-16 py-12">
             <div className="w-full max-w-[1200px] grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
                 {/* Left Side - Heading and Button */}

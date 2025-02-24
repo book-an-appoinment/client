@@ -5,7 +5,7 @@ import ToggleButton from "./ToogleButton";
 const PricingSection = () => {
   return (
     <section className="flex flex-col items-center justify-center min-h-screen bg-white py-10">
-      
+
       {/* Toggle Button Centered at the Top */}
       <ToggleButton />
 
