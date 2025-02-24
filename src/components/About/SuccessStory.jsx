@@ -1,3 +1,4 @@
+import bannerImage2 from "../../assets/about2.png";
 
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -10,7 +11,7 @@ const SuccessStory = () => {
             {/* Image Section (Hidden on Mobile) */}
             <div className="hidden md:block w-[50%]">
                 <img
-                    src="https://sahbfinance.com.sa/wp-content/uploads/2023/10/service-04.jpg"
+                    src={bannerImage2}
                     alt="Business Meeting"
                     className="rounded-xl w-full h-auto md:h-[555px] object-cover"
                 />
