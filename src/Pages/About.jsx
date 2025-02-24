@@ -1,4 +1,3 @@
-import Articles from "../components/About/Articles";
 import CompanyValues from "../components/About/CompanyValues";
 import GuidingValues from "../components/About/GuidingValues";
 import MeetOutTeam from "../components/About/MeetOutTeam";
@@ -30,7 +29,7 @@ const About = () => {
       <CommonWrapper>
         <GuidingValues />
       </CommonWrapper>
-      <Articles />
+
 
 
     </div>
