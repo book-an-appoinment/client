@@ -36,7 +36,7 @@ export const footerNavData = [
         url: "/login",
       },
       {
-        Label: "Sign Nup",
+        Label: "Sign up",
         url: "/register",
       },
     ],
