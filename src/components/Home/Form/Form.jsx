@@ -2,13 +2,14 @@ import React from "react";
 
 const ContactForm = () => {
   return (
-    <div className="w-[898px] h-[575px] bg-[#A7EB94] rounded-[30px] p-10 relative">
-      <form className="grid grid-cols-2 gap-x-8 gap-y-16">
+
+    <div className="w-full max-w-[900px] bg-[#A7EB94] rounded-[30px] p-6 sm:p-10 relative">
+      <form className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-x-8 sm:gap-y-10">
         {/* Name Field */}
-        <div className="w-[396px] h-[50px]">
+        <div className="w-full">
           <label
             htmlFor="name"
-            className="block text-[20px] text-[#045141] font-semibold leading-[29.52px] font-raleway mb-4"
+            className="block text-[18px] sm:text-[20px] text-[#045141] font-semibold mb-2"
           >
             Name
           </label>
@@ -16,15 +17,15 @@ const ContactForm = () => {
             type="text"
             id="name"
             placeholder="John"
-            className="w-full h-full border border-[#04514130] rounded-[6.15px] px-[16.83px] py-[11px] focus:outline-none focus:ring-2 focus:ring-green-500"
+            className="w-full h-[50px] border border-[#04514130] rounded-lg px-4 focus:outline-none focus:ring-2 focus:ring-green-500"
           />
         </div>
 
         {/* Email Field */}
-        <div className="w-[396px] h-[50px]">
+        <div className="w-full">
           <label
             htmlFor="email"
-            className="block text-[20px] text-[#045141] font-semibold leading-[29.52px] font-raleway mb-4"
+            className="block text-[18px] sm:text-[20px] text-[#045141] font-semibold mb-2"
           >
             Email
           </label>
@@ -32,15 +33,15 @@ const ContactForm = () => {
             type="email"
             id="email"
             placeholder="info@strategyflow.com"
-            className="w-full h-full border border-[#04514130] rounded-[6.15px] px-[16.83px] py-[11px] focus:outline-none focus:ring-2 focus:ring-green-500"
+            className="w-full h-[50px] border border-[#04514130] rounded-lg px-4 focus:outline-none focus:ring-2 focus:ring-green-500"
           />
         </div>
 
         {/* Office Field */}
-        <div className="w-[396px] h-[50px]">
+        <div className="w-full">
           <label
             htmlFor="office"
-            className="block text-[20px] text-[#045141] font-semibold leading-[29.52px] font-raleway mb-4"
+            className="block text-[18px] sm:text-[20px] text-[#045141] font-semibold mb-2"
           >
             Office
           </label>
@@ -48,15 +49,15 @@ const ContactForm = () => {
             type="text"
             id="office"
             placeholder="South Australia"
-            className="w-full h-full border border-[#04514130] rounded-[6.15px] px-[16.83px] py-[11px] focus:outline-none focus:ring-2 focus:ring-green-500"
+            className="w-full h-[50px] border border-[#04514130] rounded-lg px-4 focus:outline-none focus:ring-2 focus:ring-green-500"
           />
         </div>
 
         {/* Phone Field */}
-        <div className="w-[396px] h-[50px]">
+        <div className="w-full">
           <label
             htmlFor="phone"
-            className="block text-[20px] text-[#045141] font-semibold leading-[29.52px] font-raleway mb-4"
+            className="block text-[18px] sm:text-[20px] text-[#045141] font-semibold mb-2"
           >
             Phone
           </label>
@@ -64,36 +65,37 @@ const ContactForm = () => {
             type="tel"
             id="phone"
             placeholder="+756 235 9043"
-            className="w-full h-full border border-[#04514130] rounded-[6.15px] px-[16.83px] py-[11px] focus:outline-none focus:ring-2 focus:ring-green-500"
+            className="w-full h-[50px] border border-[#04514130] rounded-lg px-4 focus:outline-none focus:ring-2 focus:ring-green-500"
           />
         </div>
 
         {/* Message Field */}
-        <div className="col-span-2">
+        <div className="col-span-1 sm:col-span-2">
           <label
             htmlFor="message"
-            className="block text-[20px] font-semibold leading-[29.52px] font-raleway text-[#045141] mb-4"
+            className="block text-[18px] sm:text-[20px] font-semibold text-[#045141] mb-2"
           >
             Message
           </label>
           <textarea
             id="message"
             placeholder="Your message..."
-            className="w-[826px] h-[123px] border border-[#04514130] rounded-[6.15px] px-[16.83px] py-[11px] focus:outline-none focus:ring-2 focus:ring-green-500"
+            className="w-full h-[150px] border border-[#04514130] rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500"
           />
         </div>
 
-        {/* Floating Submit Button */}
-        <div className="col-span-2 flex justify-start -mt-8">
+        {/* Submit Button */}
+        <div className="col-span-1 sm:col-span-2 flex justify-center">
           <button
             type="submit"
-            className="w-[196px] h-[62px] bg-[#045141] text-[#A7EB94] rounded-[8px] shadow-lg hover:-translate-y-1 hover:shadow-2xl transition-all duration-300"
+            className="w-full sm:w-[200px] h-[50px] sm:h-[60px] bg-[#045141] text-[#A7EB94] rounded-lg shadow-lg hover:-translate-y-1 hover:shadow-xl transition-all duration-300"
           >
             Submit
           </button>
         </div>
       </form>
     </div>
+   
   );
 };
 
