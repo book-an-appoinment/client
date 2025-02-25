@@ -1,4 +1,3 @@
-import Articles from "../components/About/Articles";
 import CompanyValues from "../components/About/CompanyValues";
 import GuidingValues from "../components/About/GuidingValues";
 import MeetOutTeam from "../components/About/MeetOutTeam";
@@ -7,6 +6,7 @@ import StatsCards from "../components/About/StatsCards";
 import SuccessStory from "../components/About/SuccessStory";
 import Timeline from "../components/About/Timeline";
 import CommonWrapper from "../components/CommonWrapper/CommonWrapper";
+import UpdatedArticles from "../components/Home/updatedAreticals/UpdatedArticels";
 import Review from "../components/shared/Review";
 
 const About = () => {
@@ -30,13 +30,13 @@ const About = () => {
       <CommonWrapper>
         <GuidingValues />
       </CommonWrapper>
-      <Articles />
-
-
+      <UpdatedArticles />
     </div>
   );
 };
 
 export default About;
 
-{/* <div className="w-full h-[500px] bg-light-green">About page</div> */ }
+{
+  /* <div className="w-full h-[500px] bg-light-green">About page</div> */
+}
