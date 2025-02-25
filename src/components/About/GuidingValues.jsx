@@ -8,7 +8,7 @@ import { SlBadge } from 'react-icons/sl';
 
 const GuidingValues = () => {
     return (
-        <div className="mt-20 mb-20 max-w-[1480px] mx-auto text-center px-4">
+        <div className="mt-40 mb-20 max-w-[1480px] mx-auto text-center px-4">
             <h2 className="text-3xl font-bold mb-8">Guiding Values Define Our Work</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
                 {[

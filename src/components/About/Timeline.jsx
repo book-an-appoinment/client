@@ -1,8 +1,6 @@
 import vector1 from "../../assets/vector1.png";
-import vector2 from "../../assets/vector1.png";
-import vector3 from "../../assets/vector1.png";
-import vector4 from "../../assets/vector1.png";
-import vector5 from "../../assets/vector1.png";
+import line1 from "../../assets/line1.png";
+
 
 
 const Timeline = () => {
@@ -34,9 +32,9 @@ const Timeline = () => {
                 <div className="w-full max-w-[700px] bg-[#004D3F] bg-opacity-50 p-6 sm:p-8 rounded-lg shadow-lg relative">
 
                     {events.map((event, index) => (
-                        <div key={index} className="relative pl-6 sm:pl-10 pb-6 border-l border-green-700 last:pb-0">
+                        <div key={index} className="relative pl-6 sm:pl-10 pb-6 border-l border-white last:pb-0">
                             {/* Timeline Dot with Gradient */}
-                            <div className="w-[48px] h-[48px] absolute left-[-14px] sm:left-[-16px] top-2 flex items-center justify-center rotate-0 transition-transform duration-300 ease-in-out transform hover:scale-105 rounded-lg overflow-hidden shadow-lg">
+                            <div className="w-[48px] h-[54px] absolute left-[-14px] sm:left-[-16px] top-2 flex items-center justify-center rotate-0 transition-transform duration-300 ease-in-out transform hover:scale-105 rounded-lg overflow-hidden shadow-lg">
                                 <img
                                     src={vector1} // Replace with the appropriate image source
                                     alt="icon"

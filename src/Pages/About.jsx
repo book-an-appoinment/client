@@ -1,4 +1,3 @@
-
 import CompanyValues from "../components/About/CompanyValues";
 import GuidingValues from "../components/About/GuidingValues";
 import MeetOutTeam from "../components/About/MeetOutTeam";
@@ -30,9 +29,6 @@ const About = () => {
       <CommonWrapper>
         <GuidingValues />
       </CommonWrapper>
-      
-
-
     </div>
   );
 };

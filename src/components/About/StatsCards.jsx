@@ -8,7 +8,7 @@ const StatsCards = () => {
 
     return (
 
-        <div className=" w-full max-w-[1480px]  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:-mt-0 -mt-150">
+        <div className=" w-full max-w-[1480px]  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:-mt-40 -mt-4 lg:mt-6 md:mt-30">
             <div className="w-full h-[287px] flex flex-col items-center bg-gray-100 p-6 rounded-xl shadow-md text-center overflow-hidden">
                 {/* Icon Container */}
                 <div className="w-20 h-20 rounded-full mt-6 ml-6">
