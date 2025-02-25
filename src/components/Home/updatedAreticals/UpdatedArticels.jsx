@@ -21,7 +21,7 @@ const UpdatedArticles = () => {
       <CommonWrapper>
         <div className="mt-10 md:mt-20 flex flex-col lg:flex-row justify-between items-center">
           <div className="text-center lg:text-left">
-            <button className="px-10 py-2 border-1 border-primary-button-text text-primary-button font-bold rounded-md">
+            <button className="px-10 py-2 border-1 border-primary-button-text text-primary-button font-bold rounded-md cursor-pointer hover:bg-primary-button-text hover:text-white">
               Blog
             </button>
             <h2 className="text-xl md:text-3xl w-2/3 font-semibold leading-snug mt-4">
@@ -29,7 +29,7 @@ const UpdatedArticles = () => {
             </h2>
           </div>
           <div className="mt-4 lg:mt-0">
-            <button className="px-12 py-4 bg-light-green text-primary-button font-bold rounded-md">
+            <button className="px-12 py-4 bg-light-green text-primary-button font-bold rounded-md cursor-pointer hover:bg-light-green/60">
               More News
             </button>
           </div>

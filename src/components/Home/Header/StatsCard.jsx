@@ -37,7 +37,7 @@ const StatsCard = ({ globalClients, teamMembers, businessExperience }) => {
       </div>
 
       {/* Right side with statistics */}
-      <div className="w-2/3 py-2 lg:px-[80px] text-center">
+      <div className="w-2/3 py-2 lg:px-[80px] text-start">
         <div className="">
           <h2 className="font-bold text-5xl">
             {globalClients} <br />

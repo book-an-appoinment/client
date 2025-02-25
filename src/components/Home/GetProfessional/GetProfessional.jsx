@@ -7,7 +7,7 @@ const GetProfessional = () => {
         <div className="w-full max-w-[1200px] grid grid-cols-1 lg:grid-cols-2 gap-2 lg:gap-12 items-center">
           {/* Left Side - Heading and Button */}
           <div className="flex flex-col items-start text-white">
-            <button className="w-[140px] h-[50px] bg-[#A7EB94] text-green-900 font-semibold px-4 py-2 rounded-lg">
+            <button className="w-[140px] h-[50px] bg-[#A7EB94] text-green-900 font-semibold px-4 py-2 rounded-lg cursor-pointer hover:bg-light-green/50 hover:text-white">
               Process
             </button>
             <h1 className="font-raleway font-semibold text-2xl sm:text-4xl leading-[1.2] mt-4">
@@ -25,10 +25,10 @@ const GetProfessional = () => {
               corporis culpa a. Excepturi!
             </p>
             <div className="mt-6">
-              <button className="w-[170px] h-[60px] bg-[#A7EB94] text-green-900 font-semibold px-4 py-2 rounded-lg">
+              <button className="w-[170px] h-[60px] bg-[#A7EB94] text-primary-button font-semibold px-4 py-2 rounded-lg cursor-pointer hover:bg-light-green/50 hover:text-black">
                 Get Quotes
               </button>
-              <button className="ml-1 lg:ml-4 lg:w-[252px] h-[60px] text-white font-semibold px-4 py-2 rounded-[5px] border-[1px] border-solid border-green-400 absolute ">
+              <button className="ml-1 lg:ml-4 lg:w-[252px] h-[60px] text-white font-semibold px-4 py-2 rounded-[5px] border-[1px] border-solid border-light-green absolute hover:bg-light-green hover:text-black">
                 Book An Appointment
               </button>
             </div>

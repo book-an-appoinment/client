@@ -26,7 +26,7 @@ const AboutUs = () => {
 
       {/* Center Content */}
       <div className="col-span-1 md:col-span-2 text-center ">
-        <button className="flex mx-auto rounded-lg bg-[#F8F8F9] border-2 border-gray-200 px-4 py-2 text-lg md:text-xl font-medium text-[#0C121D]">
+        <button className="flex mx-auto rounded-lg bg-[#F8F8F9] border-2 border-gray-200 px-4 py-2 text-lg md:text-xl font-medium text-[#0C121D] cursor-pointer hover:bg-primary-button hover:text-white">
           About Us
         </button>
         <h2 className="text-3xl md:text-[52px] font-semibold my-4 text-[#0C121D]">
@@ -37,7 +37,7 @@ const AboutUs = () => {
           knowledge, we revolutionize the way companies and candidates connect.
         </p>
         <div className="flex gap-4 justify-center mt-7">
-          <button className="bg-[#A7EB94] hover:bg-[#014E3F] hover:text-white px-7 py-3 md:px-10 md:py-4 font-bold text-primary-button-text rounded-md">
+          <button className="bg-[#A7EB94] hover:bg-[#014E3F] hover:text-white px-7 py-3 md:px-10 md:py-4 font-bold text-primary-button-text rounded-md cursor-pointer ">
             Book An Appointment
           </button>
           <button className="border-2 border-[#A7EB94] hover:bg-light-green px-8 py-3 md:px-12 md:py-4 font-bold text-primary-button-text rounded-md">
@@ -64,7 +64,7 @@ const AboutUs = () => {
       </div>
 
       {/* Third Box */}
-      <div className="col-span-1 bg-[#A7EB94] p-4 rounded-xl md:pl-5 hover:cursor-pointer hover:bg-[#A7EB94]">
+      <div className="col-span-1 bg-[#A7EB94] p-4 rounded-xl md:pl-5 hover:cursor-pointer hover:bg-[#004D3F0D]">
         <h1 className="text-right text-4xl md:text-9xl font-bold bg-gradient-to-t from-[#fafafac2] to-[#004D3FC2] bg-clip-text text-transparent">
           02
         </h1>
