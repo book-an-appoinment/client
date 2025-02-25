@@ -14,25 +14,30 @@ const DashBoardLayout = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [loading, setLoading] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+  const [limit, setLimit] = useState(10);
 
   useEffect(() => {
-    fetchAppointments();
-  }, []);
+    fetchAppointments(currentPage, limit);
+  }, [currentPage, limit]);
 
-  const fetchAppointments = async () => {
+  const fetchAppointments = async (page = 1, limit = 10) => {
     setLoading(true);
     try {
       const response = await axios.get(
-        `https://server-hpxb.onrender.com/api/v1/appointments/all-appointments`
+        `https://appoinment-server-h773.onrender.com/api/appointments?page=${page}&limit=${limit}`
       );
       setAppointments(response.data.data);
       setFilteredAppointments(response.data.data);
+      setTotalPages(response.data.pagination.totalPages);
     } catch (error) {
       console.error("Error fetching appointments:", error);
     } finally {
       setLoading(false);
     }
   };
+
 
   useEffect(() => {
     const results = appointments.filter(
@@ -59,9 +64,9 @@ const DashBoardLayout = () => {
   const handleDelete = async (id) => {
     try {
       await axios.delete(
-        `https://server-hpxb.onrender.com/api/v1/appointments/${id}`
+        `https://appoinment-server-h773.onrender.com/api/appointments/${id}`
       );
-      fetchAppointments();
+      fetchAppointments(currentPage, limit);
       toast.success("Appointment deleted successfully!");
     } catch (error) {
       console.error("Error deleting appointment:", error);
@@ -70,7 +75,19 @@ const DashBoardLayout = () => {
   };
 
   const handleRefresh = () => {
-    fetchAppointments();
+    fetchAppointments(currentPage, limit);
+  };
+
+  const handleNextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  const handlePreviousPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
   };
 
   return (
@@ -119,22 +136,22 @@ const DashBoardLayout = () => {
           <table className="min-w-full">
             <thead className="bg-white/50">
               <tr>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">
+                <th className="px-6 py-3 text-left  font-medium text-gray-700 uppercase tracking-wider">
                   Name
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">
+                <th className="px-6 py-3 text-left  font-medium text-gray-700 uppercase tracking-wider">
                   Email
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">
+                <th className="px-6 py-3 text-left  font-medium text-gray-700 uppercase tracking-wider">
                   Service
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">
+                <th className="px-6 py-3 text-left  font-medium text-gray-700 uppercase tracking-wider">
                   Date
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">
+                <th className="px-6 py-3 text-left  font-medium text-gray-700 uppercase tracking-wider">
                   Time
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">
+                <th className="px-6 py-3 text-left  font-medium text-gray-700 uppercase tracking-wider">
                   Actions
                 </th>
               </tr>
@@ -146,22 +163,22 @@ const DashBoardLayout = () => {
                   className="hover:bg-white/20 cursor-pointer transition-all"
                   onClick={() => openModal(appointment)}
                 >
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                  <td className="px-6 py-4 whitespace-nowrap  text-gray-900">
                     {appointment.fullName}
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
+                  <td className="px-6 py-4 whitespace-nowrap  text-gray-700">
                     {appointment.email}
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
+                  <td className="px-6 py-4 whitespace-nowrap  text-gray-700">
                     {appointment.service}
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
+                  <td className="px-6 py-4 whitespace-nowrap  text-gray-700">
                     {new Date(appointment.date).toLocaleDateString()}
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
+                  <td className="px-6 py-4 whitespace-nowrap  text-gray-700">
                     {appointment.time}
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
+                  <td className="px-6 py-4 whitespace-nowrap  text-gray-700">
                     <button
                       onClick={(e) => {
                         e.stopPropagation();
@@ -178,6 +195,27 @@ const DashBoardLayout = () => {
           </table>
           {loading && <div className="text-center py-4">Loading...</div>}
         </div>
+
+        {/* Pagination Controls */}
+        <div className="flex justify-between items-center mt-6">
+          <button
+            onClick={handlePreviousPage}
+            disabled={currentPage === 1}
+            className="bg-gradient-to-r from-[#A7EB94] to-[#8DD879] text-white px-4 py-2 rounded-lg hover:from-[#8DD879] hover:to-[#A7EB94] transition-all flex items-center disabled:opacity-50"
+          >
+            Previous
+          </button>
+          <span className="text-gray-700">
+            Page {currentPage} of {totalPages}
+          </span>
+          <button
+            onClick={handleNextPage}
+            disabled={currentPage === totalPages}
+            className="bg-gradient-to-r from-[#A7EB94] to-[#8DD879] text-white px-4 py-2 rounded-lg hover:from-[#8DD879] hover:to-[#A7EB94] transition-all flex items-center disabled:opacity-50"
+          >
+            Next
+          </button>
+        </div>
       </div>
 
       {/* Modal */}
@@ -191,54 +229,71 @@ const DashBoardLayout = () => {
 
           {/* Modal Content */}
           <div className="bg-gradient-to-br from-[#A7EB94]/50 to-[#D1F5C6]/50 rounded-2xl shadow-2xl border border-white/30 w-full max-w-2xl max-h-[90vh] p-8 relative z-10 overflow-hidden">
-            <h2 className="text-3xl font-bold text-gray-800 mb-6">
-              Appointment Details
-            </h2>
-            <div className="space-y-4 text-gray-700 overflow-y-auto max-h-[70vh] pr-4">
-              <div className="bg-white/20 p-4 rounded-lg">
-                <p className="font-medium text-gray-800">Name:</p>
-                <p className="text-gray-900">{selectedAppointment.fullname}</p>
-              </div>
-              <div className="bg-white/20 p-4 rounded-lg">
-                <p className="font-medium text-gray-800">Email:</p>
-                <p className="text-gray-900">{selectedAppointment.email}</p>
-              </div>
-              <div className="bg-white/20 p-4 rounded-lg">
-                <p className="font-medium text-gray-800">Service:</p>
-                <p className="text-gray-900">{selectedAppointment.service}</p>
-              </div>
-              <div className="bg-white/20 p-4 rounded-lg">
-                <p className="font-medium text-gray-800">Phone:</p>
-                <p className="text-gray-900">{selectedAppointment.phoneNumber}</p>
-              </div>
-              <div className="bg-white/20 p-4 rounded-lg">
-                <p className="font-medium text-gray-800">Subject:</p>
-                <p className="text-gray-900">{selectedAppointment.subject}</p>
-              </div>
-              <div className="bg-white/20 p-4 rounded-lg">
-                <p className="font-medium text-gray-800">Date:</p>
-                <p className="text-gray-900">
-                  {new Date(selectedAppointment.date).toLocaleDateString()}
-                </p>
-              </div>
-              <div className="bg-white/20 p-4 rounded-lg">
-                <p className="font-medium text-gray-800">Time:</p>
-                <p className="text-gray-900">{selectedAppointment.time}</p>
-              </div>
-              <div className="bg-white/20 p-4 rounded-lg">
-                <p className="font-medium text-gray-800">Message:</p>
-                <p className="text-gray-900">{selectedAppointment.message}</p>
-              </div>
-            </div>
-            <div className="mt-8 flex justify-end">
-              <button
-                onClick={closeModal}
-                className="bg-gradient-to-r from-[#A7EB94] to-[#8DD879] text-white px-6 py-2 rounded-lg hover:from-[#8DD879] hover:to-[#A7EB94] transition-all"
-              >
-                Close
-              </button>
-            </div>
-          </div>
+  <h2 className="text-3xl font-bold text-gray-800 mb-6">
+    Appointment Details
+  </h2>
+  <div className="space-y-4 text-gray-700 overflow-y-auto max-h-[70vh] pr-4">
+    {/* Name */}
+    <div className="bg-white/20 p-4 rounded-lg">
+      <p className="font-medium text-gray-800">Name:</p>
+      <p className="text-gray-900 break-words">{selectedAppointment.fullname}</p>
+    </div>
+
+    {/* Email */}
+    <div className="bg-white/20 p-4 rounded-lg">
+      <p className="font-medium text-gray-800">Email:</p>
+      <p className="text-gray-900 break-words">{selectedAppointment.email}</p>
+    </div>
+
+    {/* Service */}
+    <div className="bg-white/20 p-4 rounded-lg">
+      <p className="font-medium text-gray-800">Service:</p>
+      <p className="text-gray-900 break-words">{selectedAppointment.service}</p>
+    </div>
+
+    {/* Phone */}
+    <div className="bg-white/20 p-4 rounded-lg">
+      <p className="font-medium text-gray-800">Phone:</p>
+      <p className="text-gray-900 break-words">{selectedAppointment.phoneNumber}</p>
+    </div>
+
+    {/* Subject */}
+    <div className="bg-white/20 p-4 rounded-lg">
+      <p className="font-medium text-gray-800">Subject:</p>
+      <p className="text-gray-900 break-words">{selectedAppointment.subject}</p>
+    </div>
+
+    {/* Date */}
+    <div className="bg-white/20 p-4 rounded-lg">
+      <p className="font-medium text-gray-800">Date:</p>
+      <p className="text-gray-900 break-words">
+        {new Date(selectedAppointment.date).toLocaleDateString()}
+      </p>
+    </div>
+
+    {/* Time */}
+    <div className="bg-white/20 p-4 rounded-lg">
+      <p className="font-medium text-gray-800">Time:</p>
+      <p className="text-gray-900 break-words">{selectedAppointment.time}</p>
+    </div>
+
+    {/* Message */}
+    <div className="bg-white/20 p-4 rounded-lg">
+      <p className="font-medium text-gray-800">Message:</p>
+      <p className="text-gray-900 break-words whitespace-pre-wrap">
+        {selectedAppointment.message}
+      </p>
+    </div>
+  </div>
+  <div className="mt-8 flex justify-end">
+    <button
+      onClick={closeModal}
+      className="bg-gradient-to-r from-[#A7EB94] to-[#8DD879] text-white px-6 py-2 rounded-lg hover:from-[#8DD879] hover:to-[#A7EB94] transition-all"
+    >
+      Close
+    </button>
+  </div>
+</div>
         </div>
       )}
 
