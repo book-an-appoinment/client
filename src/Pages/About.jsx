@@ -1,4 +1,3 @@
-import Articles from "../components/About/Articles";
 import CompanyValues from "../components/About/CompanyValues";
 import GuidingValues from "../components/About/GuidingValues";
 import MeetOutTeam from "../components/About/MeetOutTeam";
@@ -30,13 +29,12 @@ const About = () => {
       <CommonWrapper>
         <GuidingValues />
       </CommonWrapper>
-      <Articles />
-
-
     </div>
   );
 };
 
 export default About;
 
-{/* <div className="w-full h-[500px] bg-light-green">About page</div> */ }
+{
+  /* <div className="w-full h-[500px] bg-light-green">About page</div> */
+}

@@ -4,7 +4,7 @@ const GetProfessional = () => {
   return (
     <div className="mt-20 min-h-screen bg-gradient-to-br from-[#004D3F] to-green-700 px-4 sm:px-6 lg:px-16 py-12">
       <CommonWrapper>
-        <div className="w-full max-w-[1200px] grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="w-full max-w-[1200px] grid grid-cols-1 lg:grid-cols-2 gap-2 lg:gap-12 items-center">
           {/* Left Side - Heading and Button */}
           <div className="flex flex-col items-start text-white">
             <button className="w-[140px] h-[50px] bg-[#A7EB94] text-green-900 font-semibold px-4 py-2 rounded-lg">
@@ -17,7 +17,7 @@ const GetProfessional = () => {
           </div>
 
           {/* Right Side - Timeline Section */}
-          <div className="flex flex-col items-start text-white ml-72">
+          <div className="flex flex-col items-start text-white md:ml-6 lg:ml-72">
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque
               natus similique eum dolorum aspernatur at molestiae, architecto
@@ -28,7 +28,7 @@ const GetProfessional = () => {
               <button className="w-[170px] h-[60px] bg-[#A7EB94] text-green-900 font-semibold px-4 py-2 rounded-lg">
                 Get Quotes
               </button>
-              <button className=" ml-4 w-[252px] h-[60px] text-white font-semibold px-4 py-2 rounded-[5px] border-[1px] border-solid border-green-400 absolute ">
+              <button className="ml-1 lg:ml-4 lg:w-[252px] h-[60px] text-white font-semibold px-4 py-2 rounded-[5px] border-[1px] border-solid border-green-400 absolute ">
                 Book An Appointment
               </button>
             </div>
@@ -36,7 +36,7 @@ const GetProfessional = () => {
         </div>
 
         {/* Image and Timeline Section */}
-        <div className="flex justify-between items-center mt-12 gap-4">
+        <div className="flex flex-col gap-2 lg:flex-row lg:justify-between items-center mt-12 lg:gap-4">
           <div className="">
             <img
               className="w-full rounded-[25px] object-cover"
@@ -48,7 +48,7 @@ const GetProfessional = () => {
             <div className="bg-emerald-800 p-8 rounded-lg max-w-xl">
               <div className="relative">
                 {/* Vertical line */}
-                <div className="absolute left-5 top-5 h-[calc(100%-8rem)] w-[2px] border-l-2 border-dashed border-white !last:border-none" />
+                <div className="absolute left-[10px] lg:left-[18px] top-5 h-[calc(100%-8rem)] w-[2px] border-l-2 border-dashed border-white !last:border-none" />
 
                 {/* Timeline items */}
                 <div className="">
