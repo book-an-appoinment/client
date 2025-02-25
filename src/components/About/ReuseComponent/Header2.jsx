@@ -3,7 +3,7 @@ import ImageSection2 from "./ImageSection2";
 const Header2 = ({ heading, para }) => {
     return (
         <div
-            className="w-full lg:h-[694px]"
+            className="w-full lg:h-[694px] h-[630px] sm:h-[650px]"
             style={{
                 background:
                     "radial-gradient(55.97% 157.65% at 50.89% 48.56%, #004D3F 0%, #004D3F 53.5%, #26714B 100%)",
