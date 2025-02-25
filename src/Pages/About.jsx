@@ -32,7 +32,6 @@ const About = () => {
       </CommonWrapper>
 
       <UpdatedArticles />
-
     </div>
   );
 };
