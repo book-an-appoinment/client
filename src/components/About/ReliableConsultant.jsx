@@ -5,12 +5,19 @@ const ReliableConsultant = () => {
         <div className="mb-[50px] md:mb-[80px] lg:mb-[490px] xl:mb-[450px]">
             <Header2
                 heading={
-                    <>
-                        Reliable Consultants <br /> Measurable Results
-                    </>
+                    <div className="whitespace-pre text-center">
+                        Reliable Consultants,
+                        {"\n"}
+                        Measurable Results
+                    </div>
                 }
                 para={
-                    "Expert consulting drives corporate growth with creative strategy and solutions."
+                    <div className="whitespace-pre">
+                        Select us becouse of our experties,
+                        {"\n"}
+                        inventiveness, and traack record of accomplishment
+                    </div>
+
                 }
             />
         </div>

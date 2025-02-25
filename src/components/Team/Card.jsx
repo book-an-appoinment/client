@@ -27,10 +27,10 @@ const Card = ({ image, name, designation }) => {
       </div>
 
       {/* Name */}
-      <h1 className="text-4xl font-semibold text-[#0C121D] mt-4 text-center">{name}</h1>
+      <h1 className="text-2xl font-semibold text-[#0C121D] mt-4 w-full">{name}</h1>
 
       {/* Designation */}
-      <p className="text-gray-500 mt-1 text-center">{designation}</p>
+      <p className="text-gray-500 mt-1 ">{designation}</p>
     </div>
   );
 };
