@@ -10,20 +10,22 @@ const Header = ({
 }) => {
   return (
     <div
-      className="w-full mx-auto lg:h-[694px]"
+      className="w-full mx-auto lg:h-[694px] px-1"
       style={{
         background:
           "radial-gradient(55.97% 157.65% at 50.89% 48.56%, #004D3F 0%, #004D3F 53.5%, #26714B 100%)",
       }}
     >
-      <div className="flex pt-36 w-[50%] mx-auto">
-        <h1 className="text-white font-semibold text-5xl/17 pe-24">
+      <div className="lg:flex lg:pt-36 pt-24 px-2 text-center lg:text-start lg:w-1/2 mx-auto">
+        <h1 className="text-white font-semibold text-5xl/17 lg:pe-24">
           {heading}
         </h1>
 
-        <div className="w-1/2">
-          <p className="text-white text-lg">{para}</p>
-          <button className="bg-light-green px-12 py-4 font-bold text-primary-button-text mt-7 rounded-md">
+        <div className="lg:w-1/2">
+          <p className="text-white text-lg mt-8 lg:mt-0 px-10 lg:px-0">
+            {para}
+          </p>
+          <button className="bg-light-green px-12 py-4 font-bold text-primary-button-text mt-7 rounded-md cursor-pointer hover:bg-light-green/50 hover:shadow-2xl hover:text-white">
             {buttonTitle}
           </button>
         </div>

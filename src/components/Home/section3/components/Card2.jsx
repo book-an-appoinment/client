@@ -57,13 +57,13 @@ function Card2({
         >
           {buttonText === "View Full Catalog" ? (
             // Render the large green button
-            <button className="bg-[#A7EB94] text-primary-button-text w-[194px] h-[52px] -mt-2 rounded-lg">
+            <button className="bg-[#A7EB94] text-primary-button-text w-[194px] h-[52px] -mt-2 rounded-lg cursor-pointer">
               {buttonText}
             </button>
           ) : (
             <>
               {/* Render the small button */}
-              <button className="w-[90px] h-[23.15px] text-left">
+              <button className="w-[90px] h-[23.15px] text-left cursor-pointer">
                 {buttonText}
               </button>
 

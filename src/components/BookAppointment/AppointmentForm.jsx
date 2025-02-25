@@ -16,40 +16,63 @@ const AppointmentForm = () => {
   } = useForm();
   const [isLoading, setIsLoading] = useState(false);
 
-  const onSubmit = async (data) => {
-    const dateObj = new Date(data.date);
-    dateObj.setUTCMonth(2); // Months are 0-based, so 2 = March
-    dateObj.setUTCDate(15);
-    dateObj.setUTCHours(9, 0, 0, 0); // Set time to 09:00:00 UTC
+  // Function to format time as HH:MM AM/PM
+  const formatTime = (time) => {
+    const [hours, minutes] = time.split(":");
+    const period = hours >= 12 ? "PM" : "AM";
+    const formattedHours = hours % 12 || 12; // Convert to 12-hour format
+    return `${formattedHours}:${minutes} ${period}`;
+  };
 
-    // Convert to ISO format
-    const formattedDate = dateObj.toISOString();
+  const onSubmit = async (data) => {
+    // Format the time to HH:MM AM/PM
+    const formattedTime = formatTime(data.time);
+
+    // Combine date and time into a single ISO string
+    const dateObj = new Date(data.date);
+    const [hours, minutes] = data.time.split(":");
+    dateObj.setUTCHours(hours, minutes, 0, 0);
+
+    // Prepare the payload
     const payload = {
-      ...data,
-      phoneNumber: Number(data.phoneNumber),
-      date: formattedDate,
+      fullName: data.fullName,
+      email: data.email,
+      service: data.service,
+      phoneNumber: data.phoneNumber,
+      subject: data.subject,
+      date: dateObj.toISOString(),
+      time: formattedTime, // Use the formatted time
+      message: data.message,
     };
 
     setIsLoading(true);
-    const loadId = toast.loading("Creating........", {
-      position: "top-right",
-    });
+    const loadId = toast.loading("Creating........", { position: "top-right" });
+
     try {
       const response = await axios.post(
-        "https://server-hpxb.onrender.com/api/v1/appointments/create-appointment",
+        "https://appoinment-server-h773.onrender.com/api/appointments",
         payload
       );
       toast.dismiss(loadId);
       toast.success("Created Successfully", { position: "top-right" });
       reset();
     } catch (error) {
-      console.log(error);
-      toast.error("Something went wrong", { position: "top-right" });
-    } finally {
       toast.dismiss(loadId);
+      if (error.response && error.response.data) {
+        const validationErrors = error.response.data;
+        validationErrors.forEach((err) => {
+          toast.error(`Validation Error: ${err.message}`, {
+            position: "top-right",
+          });
+        });
+      } else {
+        toast.error("Something went wrong", { position: "top-right" });
+      }
+    } finally {
       setIsLoading(false);
     }
   };
+
   return (
     <div className="w-full max-w-[1479px] mx-auto px-4 sm:px-6 md:px-8 lg:px-[75px] -mt-[150px] lg:-mt-[380px] my-12">
       {/* Form Section */}
@@ -83,10 +106,9 @@ const AppointmentForm = () => {
             register={register}
             options={[
               { value: "Financial Service", label: "Financial Service" },
-              { value: "Task Control'", label: "Task Control" },
+              { value: "Task Control", label: "Task Control" },
               { value: "Financial Growth", label: "Financial Growth" },
               { value: "Capital Investments", label: "Capital Investments" },
-              { value: "Task Control'", label: "Task Control'" },
             ]}
             errors={errors}
             rules={{ required: "Service is required" }}
@@ -95,9 +117,16 @@ const AppointmentForm = () => {
             label="Your Phone"
             name="phoneNumber"
             register={register}
-            placeholder="Enter your phone number"
+            placeholder="+1234567890"
+            helperText="Please enter a valid phone number (e.g., +1234567890 or 123-456-7890)"
             errors={errors}
-            rules={{ required: "Phone is required" }}
+            rules={{
+              required: "Phone is required",
+              pattern: {
+                value: /^\+?[1-9]\d{1,14}$/, // Regex for international phone numbers
+                message: "Invalid phone number format",
+              },
+            }}
           />
 
           {/* Subject - Takes Full Width */}
@@ -148,7 +177,7 @@ const AppointmentForm = () => {
               disabled={isLoading}
               className="w-full bg-[#A7EB94] lg:h-[80px] text-[#004D3F] lg:text-[26px] py-3 rounded-md hover:bg-green-600 hover:text-white transition-all cursor-pointer"
             >
-              Send Message
+              {isLoading ? "Sending..." : "Send Message"}
             </button>
           </div>
         </form>

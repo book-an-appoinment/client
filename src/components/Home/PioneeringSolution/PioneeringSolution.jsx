@@ -10,9 +10,9 @@ const PioneeringSolution = () => {
         <div className="flex flex-col md:flex-row gap-5">
           {/* Left Section */}
           <div className="md:w-1/2 space-y-4">
-            <span className="bg-[#A7EB94] w-[110px] h-[40px] text-[#004D3F] text-xs px-3 py-1 rounded-sm">
+            <button className="bg-[#A7EB94] w-[110px] h-[40px] text-[#004D3F] text-lg px-4 py-2 flex items-center justify-center  rounded-sm cursor-pointer">
               Features
-            </span>
+            </button>
             <h2 className="text-[52px] text-white md:text-5xl font-semibold leading-tight">
               Pioneering Solutions Customized for Your Requirements
             </h2>

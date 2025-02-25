@@ -1,5 +1,5 @@
 import StatsCard from "./StatsCard";
-import bannerImage from "../../../assets/header/1.jpg";
+import bannerImage from "../../../assets/header/header-banner.png";
 
 const ImageSection = ({ showStatsCard = true }) => {
   return (
@@ -13,7 +13,7 @@ const ImageSection = ({ showStatsCard = true }) => {
 
         {/* Conditionally render StatsCard based on showStatsCard prop */}
         {showStatsCard && (
-          <div className="absolute -bottom-40 -right-55 transform -translate-x-1/2 -translate-y-1/2 rounded-lg">
+          <div className="mt-60 ms-12 lg:absolute -bottom-60 -right-55 mx-auto lg:-right-55 transform -translate-x-1/2 -translate-y-1/2 rounded-lg">
             <StatsCard
               globalClients="100+"
               teamMembers="150+"

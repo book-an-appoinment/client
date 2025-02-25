@@ -4,10 +4,10 @@ const GetProfessional = () => {
   return (
     <div className="mt-20 min-h-screen bg-gradient-to-br from-[#004D3F] to-green-700 px-4 sm:px-6 lg:px-16 py-12">
       <CommonWrapper>
-        <div className="w-full max-w-[1200px] grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="w-full max-w-[1200px] grid grid-cols-1 lg:grid-cols-2 gap-2 lg:gap-12 items-center">
           {/* Left Side - Heading and Button */}
           <div className="flex flex-col items-start text-white">
-            <button className="w-[140px] h-[50px] bg-[#A7EB94] text-green-900 font-semibold px-4 py-2 rounded-lg">
+            <button className="w-[140px] h-[50px] bg-[#A7EB94] text-green-900 font-semibold px-4 py-2 rounded-lg cursor-pointer hover:bg-light-green/50 hover:text-white">
               Process
             </button>
             <h1 className="font-raleway font-semibold text-2xl sm:text-4xl leading-[1.2] mt-4">
@@ -50,7 +50,7 @@ const GetProfessional = () => {
             <div className="bg-emerald-800 p-8 rounded-lg max-w-xl">
               <div className="relative">
                 {/* Vertical line */}
-                <div className="absolute left-5 top-5 h-[calc(100%-8rem)] w-[2px] border-l-2 border-dashed border-white !last:border-none" />
+                <div className="absolute left-[10px] lg:left-[18px] top-5 h-[calc(100%-8rem)] w-[2px] border-l-2 border-dashed border-white !last:border-none" />
 
                 {/* Timeline items */}
                 <div className="">

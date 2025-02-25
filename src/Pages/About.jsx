@@ -34,5 +34,3 @@ const About = () => {
 };
 
 export default About;
-
-{/* <div className="w-full h-[500px] bg-light-green">About page</div> */ }
