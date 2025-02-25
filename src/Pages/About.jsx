@@ -29,9 +29,6 @@ const About = () => {
       <CommonWrapper>
         <GuidingValues />
       </CommonWrapper>
-
-
-
     </div>
   );
 };
