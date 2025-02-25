@@ -13,7 +13,7 @@ const ImageSection = ({ showStatsCard = true }) => {
 
         {/* Conditionally render StatsCard based on showStatsCard prop */}
         {showStatsCard && (
-          <div className="mt-60 ms-10 lg:absolute -bottom-60 -right-60 mx-auto lg:-right-55 transform -translate-x-1/2 -translate-y-1/2 rounded-lg">
+          <div className="mt-60 ms-12 lg:absolute -bottom-60 -right-55 mx-auto lg:-right-55 transform -translate-x-1/2 -translate-y-1/2 rounded-lg">
             <StatsCard
               globalClients="100+"
               teamMembers="150+"
