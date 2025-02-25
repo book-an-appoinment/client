@@ -30,7 +30,9 @@ const About = () => {
       <CommonWrapper>
         <GuidingValues />
       </CommonWrapper>
+
       <UpdatedArticles />
+
     </div>
   );
 };

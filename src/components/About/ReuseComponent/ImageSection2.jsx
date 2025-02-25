@@ -9,15 +9,6 @@ const ImageSection2 = () => {
                     alt="Team collaboration"
                     className="lg:w-[1320px] lg:h-[664px] object-cover"
                 />
-
-                {/* Absolute positioning for StatsCard */}
-                {/* <div className="absolute -bottom-25 -right-30 transform -translate-x-1/2 -translate-y-1/2 rounded-lg">
-                    <StatsCard
-                        globalClients="100+"
-                        teamMembers="150+"
-                        businessExperience="15+"
-                    />
-                </div> */}
             </div>
         </div>
     );
