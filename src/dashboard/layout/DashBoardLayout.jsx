@@ -14,25 +14,30 @@ const DashBoardLayout = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [loading, setLoading] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+  const [limit, setLimit] = useState(10);
 
   useEffect(() => {
-    fetchAppointments();
-  }, []);
+    fetchAppointments(currentPage, limit);
+  }, [currentPage, limit]);
 
-  const fetchAppointments = async () => {
+  const fetchAppointments = async (page = 1, limit = 10) => {
     setLoading(true);
     try {
       const response = await axios.get(
-        `https://server-hpxb.onrender.com/api/v1/appointments/all-appointments`
+        `https://appoinment-server-h773.onrender.com/api/appointments?page=${page}&limit=${limit}`
       );
       setAppointments(response.data.data);
       setFilteredAppointments(response.data.data);
+      setTotalPages(response.data.pagination.totalPages);
     } catch (error) {
       console.error("Error fetching appointments:", error);
     } finally {
       setLoading(false);
     }
   };
+
 
   useEffect(() => {
     const results = appointments.filter(
@@ -59,9 +64,9 @@ const DashBoardLayout = () => {
   const handleDelete = async (id) => {
     try {
       await axios.delete(
-        `https://server-hpxb.onrender.com/api/v1/appointments/${id}`
+        `https://appoinment-server-h773.onrender.com/api/appointments/${id}`
       );
-      fetchAppointments();
+      fetchAppointments(currentPage, limit);
       toast.success("Appointment deleted successfully!");
     } catch (error) {
       console.error("Error deleting appointment:", error);
@@ -70,7 +75,19 @@ const DashBoardLayout = () => {
   };
 
   const handleRefresh = () => {
-    fetchAppointments();
+    fetchAppointments(currentPage, limit);
+  };
+
+  const handleNextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  const handlePreviousPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
   };
 
   return (
@@ -177,6 +194,27 @@ const DashBoardLayout = () => {
             </tbody>
           </table>
           {loading && <div className="text-center py-4">Loading...</div>}
+        </div>
+
+        {/* Pagination Controls */}
+        <div className="flex justify-between items-center mt-6">
+          <button
+            onClick={handlePreviousPage}
+            disabled={currentPage === 1}
+            className="bg-gradient-to-r from-[#A7EB94] to-[#8DD879] text-white px-4 py-2 rounded-lg hover:from-[#8DD879] hover:to-[#A7EB94] transition-all flex items-center disabled:opacity-50"
+          >
+            Previous
+          </button>
+          <span className="text-gray-700">
+            Page {currentPage} of {totalPages}
+          </span>
+          <button
+            onClick={handleNextPage}
+            disabled={currentPage === totalPages}
+            className="bg-gradient-to-r from-[#A7EB94] to-[#8DD879] text-white px-4 py-2 rounded-lg hover:from-[#8DD879] hover:to-[#A7EB94] transition-all flex items-center disabled:opacity-50"
+          >
+            Next
+          </button>
         </div>
       </div>
 
