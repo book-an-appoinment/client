@@ -13,13 +13,13 @@ const ToggleButton = ({ onToggle }) => {
     <div className="relative flex flex-col items-center">
       {/* Toggle Button Container */}
       <div
-        className="w-[290px] h-[75px] bg-[#004D3F] flex items-center py-5 rounded-full cursor-pointer relative shadow-lg border-8 border-white"
+        className="w-[270px] h-[75px] bg-[#004D3F] flex items-center py-5 rounded-full cursor-pointer relative shadow-lg border-8 border-white"
         onClick={handleToggle}
       >
         {/* Toggle Indicator */}
         <div
-          className={`w-[115px] h-[55px] flex items-center justify-center rounded-full text-[#004D3F] font-raleway text-[15px] leading-[19.11px] transition-all duration-300 z-10 ${
-            isMonthly ? "bg-white ml-2" : "ml-[135px] bg-white"
+          className={`w-[105px] h-[50px] flex items-center justify-center rounded-full text-[#004D3F] font-raleway text-[15px] leading-[19.11px] transition-all duration-300 z-10 ${
+            isMonthly ? "bg-white ml-2" : "ml-[140px] bg-white"
           }`}
         >
           {isMonthly ? "Month" : "Year"}

@@ -25,7 +25,7 @@ const Header = ({
           <p className="text-white text-lg mt-8 lg:mt-0 px-10 lg:px-0">
             {para}
           </p>
-          <button className="bg-light-green px-12 py-4 font-bold text-primary-button-text mt-7 rounded-md">
+          <button className="bg-light-green px-12 py-4 font-bold text-primary-button-text mt-7 rounded-md cursor-pointer hover:bg-light-green/50 hover:shadow-2xl hover:text-white">
             {buttonTitle}
           </button>
         </div>

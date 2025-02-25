@@ -61,7 +61,7 @@ const OnboardPlaning = () => {
       </CommonWrapper>
       {/* Curved HR Line */}
 
-      <button className=" bg-[#A7EB94] text-green-900 font-semibold px-4 py-2 rounded-[5px] text-center flex mx-auto">
+      <button className=" bg-[#A7EB94] text-green-900 font-semibold px-4 py-2 rounded-[5px] text-center flex mx-auto cursor-pointer hover:bg-[#A7EB94]/70">
         Get In Teach
       </button>
     </div>

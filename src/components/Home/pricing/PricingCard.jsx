@@ -68,7 +68,7 @@ const PricingCard = ({ bgColor, price, planType }) => {
       </ul>
 
       {/* Call to Action Button */}
-      <button className="w-[356px] h-[59px] bg-[#004D3F] text-[#A7EB94] font-urbanist text-lg rounded-full mt-6">
+      <button className="w-[356px] h-[59px] bg-[#004D3F] text-[#A7EB94] font-urbanist text-lg rounded-full mt-6 cursor-pointer hover:bg-primary-button-text/80">
         Try Free 30 Days
       </button>
     </div>
