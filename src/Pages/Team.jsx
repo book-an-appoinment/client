@@ -95,43 +95,39 @@ const Team = () => {
         <StatsCards/>
       </div>
       <div className="bg-[#004D3F] min-h-screen flex items-center justify-center p-8">
-      <div className="flex max-w-6xl mx-auto space-x-8">
-        {/* Left side content: FAQ, paragraph, and button */}
-        <div className="flex-1 text-white space-y-6">
-          <h1 className="text-4xl font-semibold">FAQs</h1>
-          <p className="text-lg">Here you can find answers to the most frequently asked questions.</p>
-          <button className="bg-[#A7EB94] text-[#004D3F] py-4 px-12 rounded-full cursor-pointer" onClick={handleContact}>Contact</button>
-        </div>
+  <div className="flex max-w-6xl mx-auto space-x-8 flex-col md:flex-row"> {/* Flex direction changes for mobile */}
+    {/* Left side content: FAQ, paragraph, and button */}
+    <div className="flex-1 text-white space-y-6">
+      <h1 className="text-4xl font-semibold">FAQs</h1>
+      <p className="text-lg">Here you can find answers to the most frequently asked questions.</p>
+      <button className="bg-[#A7EB94] text-[#004D3F] py-4 px-12 rounded-full cursor-pointer" onClick={handleContact}>Contact</button>
+    </div>
 
-        {/* Right side content: Accordion with all-around border */}
-        <div className="flex-1">
-          <div className="space-y-4">
-            {[...Array(5)].map((_, index) => (
-              <div
-                key={index}
-                className="border border-white rounded-lg p-4 " // Added border to all sides
+    {/* Right side content: Accordion with all-around border */}
+    <div className="flex-1 mt-6 md:mt-0"> {/* Added margin-top for mobile, removes it for desktop */}
+      <div className="space-y-4">
+        {[...Array(5)].map((_, index) => (
+          <div key={index} className="border border-white rounded-lg p-4">
+            <div className="flex justify-between gap-12 md:gap-52"> {/* Adjusted gap for mobile */}
+              <h3 className="text-xl text-white">Question Text goes here</h3>
+              <button
+                className="text-[#A7EB94] text-2xl"
+                onClick={() => toggleAccordion(index)}
               >
-                <div className="flex justify-between gap-52">
-                  <h3 className="text-xl text-white">Question Text goes here</h3>
-                  <button
-                    className="text-[#A7EB94] text-2xl"
-                    onClick={() => toggleAccordion(index)}
-                  >
-                    {activeIndex === index ? '-' : '+'}
-                  </button>
-                </div>
-                {activeIndex === index && (
-                  <div className="text-white mt-2">
-                    {/* Answer goes here */}
-                    <p>This is where the answer to the question will go.</p>
-                  </div>
-                )}
+                {activeIndex === index ? '-' : '+'}
+              </button>
+            </div>
+            {activeIndex === index && (
+              <div className="text-white mt-2">
+                <p>This is where the answer to the question will go.</p>
               </div>
-            ))}
+            )}
           </div>
-        </div>
+        ))}
       </div>
     </div>
+  </div>
+</div>
 
     </div>
   );
