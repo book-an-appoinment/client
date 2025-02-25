@@ -229,54 +229,71 @@ const DashBoardLayout = () => {
 
           {/* Modal Content */}
           <div className="bg-gradient-to-br from-[#A7EB94]/50 to-[#D1F5C6]/50 rounded-2xl shadow-2xl border border-white/30 w-full max-w-2xl max-h-[90vh] p-8 relative z-10 overflow-hidden">
-            <h2 className="text-3xl font-bold text-gray-800 mb-6">
-              Appointment Details
-            </h2>
-            <div className="space-y-4 text-gray-700 overflow-y-auto max-h-[70vh] pr-4">
-              <div className="bg-white/20 p-4 rounded-lg">
-                <p className="font-medium text-gray-800">Name:</p>
-                <p className="text-gray-900">{selectedAppointment.fullname}</p>
-              </div>
-              <div className="bg-white/20 p-4 rounded-lg">
-                <p className="font-medium text-gray-800">Email:</p>
-                <p className="text-gray-900">{selectedAppointment.email}</p>
-              </div>
-              <div className="bg-white/20 p-4 rounded-lg">
-                <p className="font-medium text-gray-800">Service:</p>
-                <p className="text-gray-900">{selectedAppointment.service}</p>
-              </div>
-              <div className="bg-white/20 p-4 rounded-lg">
-                <p className="font-medium text-gray-800">Phone:</p>
-                <p className="text-gray-900">{selectedAppointment.phoneNumber}</p>
-              </div>
-              <div className="bg-white/20 p-4 rounded-lg">
-                <p className="font-medium text-gray-800">Subject:</p>
-                <p className="text-gray-900">{selectedAppointment.subject}</p>
-              </div>
-              <div className="bg-white/20 p-4 rounded-lg">
-                <p className="font-medium text-gray-800">Date:</p>
-                <p className="text-gray-900">
-                  {new Date(selectedAppointment.date).toLocaleDateString()}
-                </p>
-              </div>
-              <div className="bg-white/20 p-4 rounded-lg">
-                <p className="font-medium text-gray-800">Time:</p>
-                <p className="text-gray-900">{selectedAppointment.time}</p>
-              </div>
-              <div className="bg-white/20 p-4 rounded-lg">
-                <p className="font-medium text-gray-800">Message:</p>
-                <p className="text-gray-900">{selectedAppointment.message}</p>
-              </div>
-            </div>
-            <div className="mt-8 flex justify-end">
-              <button
-                onClick={closeModal}
-                className="bg-gradient-to-r from-[#A7EB94] to-[#8DD879] text-white px-6 py-2 rounded-lg hover:from-[#8DD879] hover:to-[#A7EB94] transition-all"
-              >
-                Close
-              </button>
-            </div>
-          </div>
+  <h2 className="text-3xl font-bold text-gray-800 mb-6">
+    Appointment Details
+  </h2>
+  <div className="space-y-4 text-gray-700 overflow-y-auto max-h-[70vh] pr-4">
+    {/* Name */}
+    <div className="bg-white/20 p-4 rounded-lg">
+      <p className="font-medium text-gray-800">Name:</p>
+      <p className="text-gray-900 break-words">{selectedAppointment.fullname}</p>
+    </div>
+
+    {/* Email */}
+    <div className="bg-white/20 p-4 rounded-lg">
+      <p className="font-medium text-gray-800">Email:</p>
+      <p className="text-gray-900 break-words">{selectedAppointment.email}</p>
+    </div>
+
+    {/* Service */}
+    <div className="bg-white/20 p-4 rounded-lg">
+      <p className="font-medium text-gray-800">Service:</p>
+      <p className="text-gray-900 break-words">{selectedAppointment.service}</p>
+    </div>
+
+    {/* Phone */}
+    <div className="bg-white/20 p-4 rounded-lg">
+      <p className="font-medium text-gray-800">Phone:</p>
+      <p className="text-gray-900 break-words">{selectedAppointment.phoneNumber}</p>
+    </div>
+
+    {/* Subject */}
+    <div className="bg-white/20 p-4 rounded-lg">
+      <p className="font-medium text-gray-800">Subject:</p>
+      <p className="text-gray-900 break-words">{selectedAppointment.subject}</p>
+    </div>
+
+    {/* Date */}
+    <div className="bg-white/20 p-4 rounded-lg">
+      <p className="font-medium text-gray-800">Date:</p>
+      <p className="text-gray-900 break-words">
+        {new Date(selectedAppointment.date).toLocaleDateString()}
+      </p>
+    </div>
+
+    {/* Time */}
+    <div className="bg-white/20 p-4 rounded-lg">
+      <p className="font-medium text-gray-800">Time:</p>
+      <p className="text-gray-900 break-words">{selectedAppointment.time}</p>
+    </div>
+
+    {/* Message */}
+    <div className="bg-white/20 p-4 rounded-lg">
+      <p className="font-medium text-gray-800">Message:</p>
+      <p className="text-gray-900 break-words whitespace-pre-wrap">
+        {selectedAppointment.message}
+      </p>
+    </div>
+  </div>
+  <div className="mt-8 flex justify-end">
+    <button
+      onClick={closeModal}
+      className="bg-gradient-to-r from-[#A7EB94] to-[#8DD879] text-white px-6 py-2 rounded-lg hover:from-[#8DD879] hover:to-[#A7EB94] transition-all"
+    >
+      Close
+    </button>
+  </div>
+</div>
         </div>
       )}
 
